@@ -22,7 +22,7 @@
 const CONTACT = {
   email:    "jouw@email.nl",   // <-- VUL IN: hier komen aanvragen binnen
   whatsapp: "",                // <-- optioneel: bv "31612345678" (zonder +), leeg = uit
-  merk:     "[ jouw merk ]"    // <-- VUL IN: je winkelnaam
+  merk:     "Antiek in het Antiek"    // <-- je winkelnaam
 };
 
 const PRODUCTS = [
