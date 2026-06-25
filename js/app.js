@@ -90,3 +90,14 @@ document.querySelectorAll('[data-merk]').forEach(el => el.textContent = CONTACT.
 
 renderHotspots();
 renderGrid();
+
+/* ---- tabs: wisselen tussen Showroom en Antiekmarkt ---- */
+function showView(view){
+  document.getElementById('view-showroom').hidden = (view !== 'showroom');
+  document.getElementById('view-antiekmarkt').hidden = (view !== 'antiekmarkt');
+  document.querySelectorAll('.tab').forEach(t =>
+    t.classList.toggle('active', t.dataset.view === view));
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+document.querySelectorAll('[data-view]').forEach(el =>
+  el.addEventListener('click', () => showView(el.dataset.view)));

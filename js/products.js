@@ -37,7 +37,7 @@ const PRODUCTS = [
     specs: [["Herkomst","Italië"],["Periode","ca. 1960"],["Materiaal","rozenhout · messing"],["Staat","mooie originele staat"]],
     verhaal: "Het pronkstuk: lang en laag, met zwart blad en getorste poten met messing dopjes. Een stuk voor de kenner en de inrichter — verkoopt op herkomst en allure.",
     betaallink: "",
-    hotspot: { x: 26.5, y: 57 }
+    hotspot: { x: 12, y: 64 }
   },
   {
     id: "tafel",
@@ -50,7 +50,7 @@ const PRODUCTS = [
     specs: [["Stijl","Nederlands/Scandinavisch"],["Periode","jaren '50"],["Materiaal","berken/beuken"],["Detail","doorboorde poten"]],
     verhaal: "Een kennersstuk: blank hout, gestileerde doorboorde poten, in de sfeer van Pastoe/Braakman. Verkoopt op het designverhaal en de toeschrijving.",
     betaallink: "",
-    hotspot: { x: 49, y: 73 }
+    hotspot: { x: 37, y: 60 }
   },
   {
     id: "fauteuils",
@@ -63,7 +63,7 @@ const PRODUCTS = [
     specs: [["Periode","jaren '70"],["Stijl","space-age · draaibaar"],["Bekleding","oranje velours"],["Aantal","set van 2"]],
     verhaal: "Puur lef en sfeer. Geen naam nodig om te verkopen — dit is het gespreksstuk waar de liefhebber voor valt. Verkoopt op beeld en durf.",
     betaallink: "",
-    hotspot: { x: 60.5, y: 52 }
+    hotspot: { x: 27, y: 80 }
   },
   {
     id: "boby",
@@ -76,7 +76,7 @@ const PRODUCTS = [
     specs: [["Ontwerper","Joe Colombo"],["Producent","Bieffeplast"],["Type","verrijdbare trolley"],["Herkenning","verkoopt op naam"]],
     verhaal: "Een echt icoon. De kenner zoekt hier letterlijk op naam. Bouw er autoriteitscontent omheen: 'hoe herken je een originele Boby'.",
     betaallink: "",
-    hotspot: { x: 76, y: 62 }
+    hotspot: { x: 71, y: 64 }
   },
   {
     id: "barkast",
@@ -89,6 +89,6 @@ const PRODUCTS = [
     specs: [["Periode","jaren '70"],["Stijl","Hollywood regency"],["Materiaal","zwart · chroom · messing"],["Sfeer","avond · glamour"]],
     verhaal: "Glamour op wielen. Een sfeerstuk voor de liefhebber die durft. Verkoopt op uitstraling, niet op specificaties.",
     betaallink: "",
-    hotspot: { x: 87.5, y: 58 }
+    hotspot: { x: 88, y: 50 }
   }
 ];
