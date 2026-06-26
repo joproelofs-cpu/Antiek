@@ -48,6 +48,54 @@ const PRODUCTS = [
     specs: [["Ontwerper","Joe Colombo"],["Producent","Bieffeplast"],["Type","verrijdbare trolley"],["Kleur","zwart"]],
     verhaal: "Het icoon waar verzamelaars op naam naar zoeken. Joe Colombo's Boby \u2014 draaiende laden, rolt waar je wilt, ontworpen toen de toekomst nog van plastic was. Designgeschiedenis op wieltjes.",
     betaallink: ""
+  },
+  {
+    id: "spiegel",
+    naam: "Vergulde staande spiegel, ovaal",
+    categorie: "Spiegels \u00b7 statement",
+    laag: "C",
+    prijs: "\u20ac2.200",
+    prijsNoot: "indicatief",
+    foto: "images/spiegel.jpg",
+    specs: [["Vorm","ovaal, kantelbaar"],["Lijst","verguld bloemenreli\u00ebf"],["Detail","gedrapeerde swag"],["Type","cheval / passpiegel"]],
+    verhaal: "Onbeschaamd weelderig. Een kantelbare passpiegel in een verguld bloemenreli\u00ebf met gedrapeerde swag \u2014 pure barokke overdaad, precies waar minimalisme ophoudt. \u00c9\u00e9n van \u00e9\u00e9n.",
+    betaallink: ""
+  },
+  {
+    id: "fauteuil",
+    naam: "Zwart-wit draaifauteuil, grafisch",
+    categorie: "Zitmeubels \u00b7 statement",
+    laag: "C",
+    prijs: "\u20ac1.650",
+    prijsNoot: "indicatief",
+    foto: "images/fauteuil.jpg",
+    specs: [["Vorm","ronde tub, draaibaar"],["Stof","grafisch zwart-wit"],["Voet","messing"],["Sfeer","modern \u00b7 brutaal"]],
+    verhaal: "Een fauteuil als kunstwerk. Ronde kuip, draaibaar op een messing voet, bekleed in een grafisch zwart-wit dessin dat de hele kamer overneemt. Ga zitten en je zit middenin het statement.",
+    betaallink: ""
+  },
+  {
+    id: "tafel",
+    naam: "Houten salontafel met sculpturale poten",
+    categorie: "Tafels \u00b7 designstuk",
+    laag: "C",
+    prijs: "\u20ac1.900",
+    prijsNoot: "indicatief",
+    foto: "images/tafel.jpg",
+    specs: [["Stijl","Nederlands/Scandinavisch"],["Periode","jaren '50"],["Materiaal","berken/beuken"],["Detail","doorboorde poten"]],
+    verhaal: "Een kennersstuk: blank hout, gestileerde doorboorde poten, een ondertablet voor je mooiste boeken. Stil vakmanschap dat zich pas verraadt als je goed kijkt.",
+    betaallink: ""
+  },
+  {
+    id: "rolkast",
+    naam: "Op-art rolkast met cirkelmotief",
+    categorie: "Opbergen \u00b7 space-age",
+    laag: "B",
+    prijs: "\u20ac1.450",
+    prijsNoot: "indicatief",
+    foto: "images/rolkast.jpg",
+    specs: [["Periode","jaren '70"],["Stijl","pop / op-art"],["Motief","cirkel in oranje & roze"],["Onderstel","op wieltjes"]],
+    verhaal: "Een kast die schreeuwt. Cr\u00e8me met een knaloranje cirkel in een roze ring, op wieltjes \u2014 pop-art die je nergens kunt verstoppen. Voor wie klaar is met saaie kasten.",
+    betaallink: ""
   }
 ];
 
@@ -68,13 +116,17 @@ const ROOMS = [
       { type:"product", id:"buste",   x:80, y:33 },
       { type:"room",    to:"woonkamer", label:"Woonkamer", x:57, y:40 }
     ]
-  }
-  /* ,
+  },
   {
     id: "woonkamer",
     naam: "De woonkamer",
     foto: "images/woonkamer.jpg",
-    hotspots: [ ... ]
+    hotspots: [
+      { type:"product", id:"spiegel",  x:32, y:44 },
+      { type:"product", id:"fauteuil", x:54, y:54 },
+      { type:"product", id:"tafel",    x:57, y:80 },
+      { type:"product", id:"rolkast",  x:83, y:58 },
+      { type:"room", to:"hal", label:"Hal", dir:"back", x:7, y:18 }
+    ]
   }
-  */
 ];

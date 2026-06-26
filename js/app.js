@@ -38,7 +38,9 @@ function renderRoom(){
       const b = document.createElement('button');
       b.className = 'hs-room' + (exists ? '' : ' soon');
       b.style.left = h.x + '%'; b.style.top = h.y + '%';
-      b.innerHTML = `<span class="door">${h.label}${exists ? ' \u2192' : ' \u00b7 binnenkort'}</span>`;
+      const arrow = exists ? (h.dir === 'back' ? '' : ' \u2192') : ' \u00b7 binnenkort';
+      const lead  = (exists && h.dir === 'back') ? '\u2190 ' : '';
+      b.innerHTML = `<span class="door">${lead}${h.label}${arrow}</span>`;
       b.setAttribute('aria-label', 'Ga naar ' + h.label);
       b.addEventListener('click', () => { if (exists){ currentRoom = h.to; renderRoom(); window.scrollTo({top:0,behavior:'smooth'}); }});
       stage.appendChild(b);
