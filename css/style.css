@@ -29,12 +29,13 @@ a{color:inherit}
 .tab:hover{color:var(--bone)}
 .tab.active{background:var(--taupe);color:var(--ink)}
 
-/* groot logo, links → rechts, taupe, uitgeknipt */
-.logo-banner{display:block;height:clamp(110px,17vw,196px);width:auto;max-width:100%;margin:8px 0 16px}
+/* groot logo, volle breedte (net zo breed als de foto), taupe, uitgeknipt */
+.logo-banner{display:block;width:100%;height:auto;margin:8px 0 16px}
 
 .lead{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4.4vw,44px);line-height:1.04;letter-spacing:-.01em;max-width:20ch;margin:8px 0 6px}
 .lead em{font-style:italic;color:var(--taupe)}
 .sub{font-size:15px;color:var(--bone-dim);max-width:54ch;margin-bottom:18px}
+.sub.full{max-width:none}
 .sub.wide{max-width:62ch}
 
 .stage-shell{position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
