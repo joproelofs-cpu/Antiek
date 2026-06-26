@@ -19,18 +19,18 @@ body{background:var(--ox-deep);color:var(--bone);
   font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.045;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.wrap{max-width:1200px;margin:0 auto;padding:18px 20px 72px}
+.wrap{max-width:1200px;margin:0 auto;padding:8px 20px 72px}
 a{color:inherit}
 
 /* slanke bovenbalk met alleen de tabs */
-.topnav{display:flex;justify-content:flex-end;gap:4px;margin-bottom:6px}
+.topnav{display:flex;justify-content:flex-end;gap:4px;margin-bottom:2px}
 .tab{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
   border:none;background:transparent;color:var(--bone-dim);padding:8px 12px;border-radius:999px;cursor:pointer;transition:.18s}
 .tab:hover{color:var(--bone)}
 .tab.active{background:var(--taupe);color:var(--ink)}
 
 /* groot logo, volle breedte (net zo breed als de foto), taupe, uitgeknipt */
-.logo-banner{display:block;width:100%;height:auto;margin:8px 0 16px}
+.logo-banner{display:block;width:100%;height:auto;margin:0}
 
 .lead{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4.4vw,44px);line-height:1.04;letter-spacing:-.01em;max-width:20ch;margin:8px 0 6px}
 .lead em{font-style:italic;color:var(--taupe)}
