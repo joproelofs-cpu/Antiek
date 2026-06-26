@@ -10,6 +10,7 @@
   --bone-dim:#CBB99A;    /* muted text */
   --moss:#7B8438;        /* kitsch pop */
   --ink:#160C09;         /* near-black */
+  --studio:#BEAC92;      /* studio-achtergrond productfoto's */
   --line:rgba(195,155,82,.30);   /* brass hairline */
   --shadow:0 22px 60px -20px rgba(0,0,0,.65);
 }
@@ -33,9 +34,8 @@ header{display:flex;align-items:center;justify-content:space-between;gap:18px;fl
 .sub{font-size:15px;color:var(--bone-dim);max-width:52ch;margin-bottom:18px}
 
 .stage-shell{position:relative;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
-.stage{position:relative;width:100%;aspect-ratio:1600/1066;display:block}
-.stage svg{position:absolute;inset:0;width:100%;height:100%}
-.stage-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.stage{position:relative;width:100%;display:block;line-height:0}
+.stage-bg{position:relative;width:100%;height:auto;display:block}
 
 .hs{position:absolute;transform:translate(-50%,-50%);border:none;background:none;cursor:pointer;padding:0;z-index:3}
 .hs .pin{display:block;border-radius:50%;background:var(--bone);border:2px solid var(--ink);box-shadow:0 4px 14px rgba(0,0,0,.5);transition:transform .18s}
@@ -64,8 +64,8 @@ header{display:flex;align-items:center;justify-content:space-between;gap:18px;fl
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
 .card{background:var(--ox);border-radius:12px;overflow:hidden;border:1px solid var(--line);cursor:pointer;transition:transform .18s,box-shadow .18s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
-.card-img{aspect-ratio:4/3;overflow:hidden;background:var(--ox-lift)}
-.card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.card-img{aspect-ratio:4/3;overflow:hidden;background:var(--studio)}
+.card-img img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .4s}
 .card:hover .card-img img{transform:scale(1.05)}
 .card-b{padding:14px 15px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card-cat{font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)}
@@ -84,8 +84,8 @@ header{display:flex;align-items:center;justify-content:space-between;gap:18px;fl
   box-shadow:-24px 0 60px -20px rgba(0,0,0,.7);transform:translateX(105%);transition:transform .32s cubic-bezier(.4,0,.1,1);z-index:50;display:flex;flex-direction:column}
 .panel.open{transform:translateX(0)}
 @media(prefers-reduced-motion:reduce){.panel{transition:none}.hs::after{animation:none}.card,.card-img img{transition:none}}
-.panel-media{position:relative;aspect-ratio:4/3;background:var(--ox-lift);overflow:hidden;flex:none}
-.panel-media img{width:100%;height:100%;object-fit:cover;display:block}
+.panel-media{position:relative;aspect-ratio:4/3;background:var(--studio);overflow:hidden;flex:none}
+.panel-media img{width:100%;height:100%;object-fit:contain;display:block}
 .panel .close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(13,6,4,.7);color:var(--bone);font-size:18px;cursor:pointer;z-index:2}
 .panel-body{padding:24px 26px 26px;overflow:auto}
 .badge{font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;display:inline-block;padding:5px 10px;border-radius:999px;border:1px solid var(--line);margin-bottom:14px;color:var(--bone)}
@@ -129,3 +129,21 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .insp-foot{margin-top:26px;font-size:15px;color:var(--bone-dim)}
 .link-btn{font:inherit;color:var(--persimmon);background:none;border:none;cursor:pointer;padding:0;font-weight:700}
 .link-btn:hover{color:var(--persimmon-2);text-decoration:underline}
+
+/* ---- doorgang naar volgende kamer ---- */
+.hs-room{position:absolute;transform:translate(-50%,-50%);border:none;background:none;cursor:pointer;padding:0;z-index:4}
+.hs-room .door{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--bone);background:rgba(13,6,4,.6);border:1px solid var(--brass);padding:10px 15px;border-radius:999px;
+  backdrop-filter:blur(3px);box-shadow:0 6px 22px rgba(0,0,0,.55);transition:.18s;white-space:nowrap;line-height:1}
+.hs-room:hover .door,.hs-room:focus-visible .door{background:var(--persimmon);color:var(--ink);border-color:var(--persimmon)}
+.hs-room.soon .door{opacity:.85}
+.hs-room:focus-visible{outline:none}
+.hs-room:focus-visible .door{box-shadow:0 0 0 4px rgba(232,82,30,.45)}
+.hs-room::after{content:"";position:absolute;left:50%;top:50%;width:100%;height:100%;border-radius:999px;border:1.5px solid var(--brass);transform:translate(-50%,-50%);animation:doorpulse 2.6s ease-out infinite;opacity:0;pointer-events:none}
+@keyframes doorpulse{0%{opacity:.5;transform:translate(-50%,-50%) scale(1)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.35)}}
+@media(prefers-reduced-motion:reduce){.hs-room::after{animation:none}}
+
+/* ---- bedrijfsinfo onder de kamer ---- */
+.info-wrap{margin-top:46px;border-top:1px solid var(--line);padding-top:34px}
+.info-wrap > h2{font-family:'Fraunces',serif;font-weight:700;font-size:28px;margin:0 0 4px}
+.info-wrap > .sub{margin-bottom:22px}

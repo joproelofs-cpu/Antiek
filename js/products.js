@@ -1,94 +1,80 @@
 /* =========================================================================
-   PRODUCTEN  —  dit is het ENIGE bestand dat je hoeft te bewerken
+   PRODUCTEN & KAMERS  —  dit bestand bewerk je (samen met Claude)
    =========================================================================
-
-   Een product toevoegen?  Kopieer één blok hieronder (van { tot },)
-   en vul het in. Een product weghalen? Verwijder het blok.
-
-   Velden:
-   - id          : kort, uniek, geen spaties (bv. "dressoir-2")
-   - naam        : de titel
-   - categorie   : kleine regel boven de titel
-   - laag        : "A" (instapper), "B" (midden) of "C" (topstuk)
-   - prijs       : tekst, bv. "€3.400" of "vanaf €35"
-   - prijsNoot   : klein tekstje achter de prijs (mag leeg "")
-   - foto        : bestandsnaam in de map images/, bv. "images/dressoir.jpg"
-   - specs       : lijstje [label, waarde] — zoveel je wilt
-   - verhaal     : 1–3 zinnen
-   - betaallink  : plak hier je Mollie-betaallink ("" = alleen aanvraag-knop)
-   - hotspot     : { x, y } in % om het in de kamer te tonen, of null
+   PRODUCTS = je stukken.   ROOMS = de foto's waar je doorheen klikt.
+   Een klikpunt in een kamer is OF een product OF een doorgang naar een
+   andere kamer. x/y zijn percentages (vanaf links / vanaf boven).
    ========================================================================= */
 
 const CONTACT = {
-  email:    "jouw@email.nl",   // <-- VUL IN: hier komen aanvragen binnen
-  whatsapp: "",                // <-- optioneel: bv "31612345678" (zonder +), leeg = uit
-  merk:     "Antiek in het Antiek"    // <-- je winkelnaam
+  email:    "jouw@email.nl",          // <-- VUL IN: hier komen aanvragen binnen
+  whatsapp: "",                       // <-- optioneel: bv "31612345678"
+  merk:     "Antiek in het Antiek"
 };
 
 const PRODUCTS = [
   {
-    id: "dressoir",
-    naam: "Italiaans dressoir in rozenhout",
-    categorie: "Opbergen · topstuk",
-    laag: "C",
-    prijs: "€3.400",
-    prijsNoot: "indicatief",
-    foto: "images/dressoir.jpg",
-    specs: [["Herkomst","Italië"],["Periode","ca. 1960"],["Materiaal","rozenhout · messing"],["Staat","mooie originele staat"]],
-    verhaal: "Het pronkstuk: lang en laag, met zwart blad en getorste poten met messing dopjes. Een stuk voor de kenner en de inrichter — verkoopt op herkomst en allure.",
-    betaallink: "",
-    hotspot: { x: 12, y: 64 }
-  },
-  {
-    id: "tafel",
-    naam: "Berken salontafel met sculpturale poten",
-    categorie: "Tafels · designstuk",
-    laag: "C",
-    prijs: "€1.900",
-    prijsNoot: "indicatief",
-    foto: "images/tafel.jpg",
-    specs: [["Stijl","Nederlands/Scandinavisch"],["Periode","jaren '50"],["Materiaal","berken/beuken"],["Detail","doorboorde poten"]],
-    verhaal: "Een kennersstuk: blank hout, gestileerde doorboorde poten, in de sfeer van Pastoe/Braakman. Verkoopt op het designverhaal en de toeschrijving.",
-    betaallink: "",
-    hotspot: { x: 37, y: 60 }
-  },
-  {
-    id: "fauteuils",
-    naam: "Oranje loungefauteuils (set van 2)",
-    categorie: "Zitmeubels · statement",
+    id: "kapstok",
+    naam: "Space-age kapstok in cr\u00e8me",
+    categorie: "Garderobe \u00b7 sculpturaal",
     laag: "B",
-    prijs: "€1.250",
-    prijsNoot: "indicatief · per set",
-    foto: "images/fauteuils.jpg",
-    specs: [["Periode","jaren '70"],["Stijl","space-age · draaibaar"],["Bekleding","oranje velours"],["Aantal","set van 2"]],
-    verhaal: "Puur lef en sfeer. Geen naam nodig om te verkopen — dit is het gespreksstuk waar de liefhebber voor valt. Verkoopt op beeld en durf.",
-    betaallink: "",
-    hotspot: { x: 27, y: 80 }
+    prijs: "\u20ac480",
+    prijsNoot: "indicatief",
+    foto: "images/kapstok.jpg",
+    specs: [["Periode","jaren '70"],["Stijl","Italiaans space-age"],["Materiaal","cr\u00e8me kunststof"],["Staat","mooie vintage staat"]],
+    verhaal: "Een kapstok die de hal kaapt. Geen ondergeschikt meubel maar een sculptuur op een voet \u2014 ronde haken, melkwitte kunststof, pure jaren '70-bravoure. \u00c9\u00e9n van \u00e9\u00e9n.",
+    betaallink: ""
   },
   {
-    id: "boby",
-    naam: "Boby-trolley — Joe Colombo",
-    categorie: "Iconen · designklassieker",
+    id: "buste",
+    naam: "Bronzen buste van David",
+    categorie: "Sculptuur \u00b7 object",
     laag: "C",
-    prijs: "€650",
+    prijs: "\u20ac1.250",
     prijsNoot: "indicatief",
-    foto: "images/boby.jpg",
-    specs: [["Ontwerper","Joe Colombo"],["Producent","Bieffeplast"],["Type","verrijdbare trolley"],["Herkenning","verkoopt op naam"]],
-    verhaal: "Een echt icoon. De kenner zoekt hier letterlijk op naam. Bouw er autoriteitscontent omheen: 'hoe herken je een originele Boby'.",
-    betaallink: "",
-    hotspot: { x: 71, y: 64 }
+    foto: "images/buste.jpg",
+    specs: [["Onderwerp","David, naar Michelangelo"],["Materiaal","brons/koper"],["Voet","verguld"],["Staat","warme, geleefde patina"]],
+    verhaal: "Geen gips, geen kopie van de kopie. Massief brons met een patina die jaren kostte, op een verguld voetstuk. Zet hem op een sokkel en de kamer buigt naar hem toe.",
+    betaallink: ""
   },
   {
-    id: "barkast",
-    naam: "Barkast in zwart & messing",
-    categorie: "Opbergen · glamour",
-    laag: "B",
-    prijs: "€1.450",
+    id: "trolley",
+    naam: "Boby-trolley \u2014 Joe Colombo",
+    categorie: "Iconen \u00b7 designklassieker",
+    laag: "C",
+    prijs: "\u20ac650",
     prijsNoot: "indicatief",
-    foto: "images/barkast.jpg",
-    specs: [["Periode","jaren '70"],["Stijl","Hollywood regency"],["Materiaal","zwart · chroom · messing"],["Sfeer","avond · glamour"]],
-    verhaal: "Glamour op wielen. Een sfeerstuk voor de liefhebber die durft. Verkoopt op uitstraling, niet op specificaties.",
-    betaallink: "",
-    hotspot: { x: 88, y: 50 }
+    foto: "images/trolley.jpg",
+    specs: [["Ontwerper","Joe Colombo"],["Producent","Bieffeplast"],["Type","verrijdbare trolley"],["Kleur","zwart"]],
+    verhaal: "Het icoon waar verzamelaars op naam naar zoeken. Joe Colombo's Boby \u2014 draaiende laden, rolt waar je wilt, ontworpen toen de toekomst nog van plastic was. Designgeschiedenis op wieltjes.",
+    betaallink: ""
   }
+];
+
+/* ===== KAMERS =====
+   Elke kamer is \u00e9\u00e9n foto. 'hotspots' zijn de klikpunten erop:
+   - { type:"product", id:"<product-id>", x, y }  -> opent dat product
+   - { type:"room", to:"<kamer-id>", label:"...", x, y } -> volgende kamer
+   De volgende kamer (Woonkamer) voeg je hier later toe als nieuw blok. */
+
+const ROOMS = [
+  {
+    id: "hal",
+    naam: "De hal",
+    foto: "images/hal.jpg",
+    hotspots: [
+      { type:"product", id:"kapstok", x:11, y:42 },
+      { type:"product", id:"trolley", x:27, y:64 },
+      { type:"product", id:"buste",   x:80, y:33 },
+      { type:"room",    to:"woonkamer", label:"Woonkamer", x:57, y:40 }
+    ]
+  }
+  /* ,
+  {
+    id: "woonkamer",
+    naam: "De woonkamer",
+    foto: "images/woonkamer.jpg",
+    hotspots: [ ... ]
+  }
+  */
 ];

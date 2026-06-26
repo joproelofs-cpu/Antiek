@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Showroom</title>
-<meta name="description" content="Zeldzame, authentieke mid-century en antiek designstukken met een verhaal.">
+<title>Antiek in het Antiek</title>
+<meta name="description" content="Luide, zeldzame antiek- en designstukken. Loud antiques, new generation.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -14,72 +14,61 @@
 <div class="wrap">
   <header>
     <div class="head-left">
-      <div class="mark"><span class="d"></span><span data-merk>[ jouw merk ]</span></div>
+      <div class="mark"><span class="d"></span><span data-merk>Antiek in het Antiek</span></div>
       <nav class="tabs" aria-label="Hoofdmenu">
         <button class="tab active" data-view="showroom">Showroom</button>
-        <button class="tab" data-view="antiekmarkt">Antiekmarkt</button>
+        <button class="tab" data-view="producten">Alle producten</button>
       </nav>
     </div>
   </header>
 
-  <!-- ============ SHOWROOM ============ -->
+  <!-- ============ SHOWROOM (kamers) ============ -->
   <section id="view-showroom">
-    <h1 class="lead">Loop de zaal in. <em>Klik wat je raakt.</em></h1>
-    <p class="sub">Luid, zeldzaam en onbeschaamd duur. Antiek van de markt, recht naar een nieuwe generatie &mdash; klik een stuk aan voor het verhaal.</p>
+    <h1 class="lead">Loop het huis in. <em>Klik wat je raakt.</em></h1>
+    <p class="sub">Luid, zeldzaam en onbeschaamd duur. Elke kamer is een foto &mdash; klik een stuk aan voor het verhaal, of loop door naar de volgende ruimte.</p>
 
     <div class="stage-shell">
       <div class="stage" id="stage">
-        <img class="stage-bg" src="images/kamer.jpg" alt="Weelderige, vergulde zaal als sfeervolle showroom">
-        <!-- klikpunten worden door app.js geplaatst -->
+        <img class="stage-bg" id="stage-bg" src="images/hal.jpg" alt="De hal">
+        <!-- klikpunten + doorgangen via app.js -->
       </div>
     </div>
 
-    <div class="legend" aria-hidden="true">
-      <span><i class="a"></i> Laag A &mdash; instappers &euro;</span>
-      <span><i class="b"></i> Laag B &mdash; middensegment &euro;&euro;</span>
-      <span><i class="c"></i> Laag C &mdash; topstuk &euro;&euro;&euro;</span>
+    <!-- bedrijfsinfo: verschijnt als je naar onder scrolt -->
+    <div class="info-wrap">
+      <h2>Het huis</h2>
+      <p class="sub wide">Wij halen het luide, vreemde en verrukkelijk dure antiek van de markt en brengen het naar een nieuwe generatie. Geen stoffige vitrines &mdash; karakter, lef en stukken met een verleden.</p>
+      <div class="insp-grid">
+        <article class="insp">
+          <span class="insp-no">Over</span>
+          <h3>Antiek in het Antiek</h3>
+          <p>Wij sourcen op markten en uit nalatenschappen, en kiezen alleen wat opvalt: design met een naam, objecten met een verhaal, het soort stuk dat een kamer kaapt. E&eacute;n van &eacute;&eacute;n, eerlijk over herkomst en staat.</p>
+        </article>
+        <article class="insp">
+          <span class="insp-no">Updates</span>
+          <h3>Vers van de markt</h3>
+          <p>Elke week nieuwe vondsten. Volg mee op TikTok en Instagram voor de jacht, de geschiedenis achter de stukken en hoe je ze in huis zet. Wat hier binnenkomt, is meestal zo weer weg.</p>
+        </article>
+        <article class="insp">
+          <span class="insp-no">Strategie</span>
+          <h3>Loud antiques, new generation</h3>
+          <p>Wij geloven dat de tijd van minimalisme voorbij is. Mensen willen weer karakter, kleur en verhaal. Wij maken dat bereikbaar &mdash; van een betaalbare vondst tot een topstuk voor de verzamelaar.</p>
+        </article>
+      </div>
+      <p class="insp-foot">Liever alles op een rij? <button class="link-btn" data-view="producten">Bekijk alle producten &rarr;</button></p>
     </div>
-
-    <div class="cat-head">
-      <h2>De volledige collectie</h2>
-      <p>Alles wat nu binnen is &mdash; klik voor het verhaal.</p>
-    </div>
-    <div class="grid" id="grid"><!-- catalogus via app.js --></div>
   </section>
 
-  <!-- ============ ANTIEKMARKT ============ -->
-  <section id="view-antiekmarkt" hidden>
-    <p class="eyebrow-big">Inspiratie</p>
-    <h1 class="lead">De antiekmarkt.</h1>
-    <p class="sub wide">Antiek en vintage design is geen decor &mdash; het is karakter. Een stuk met een verleden vertelt een verhaal dat nieuw meubilair nooit kan namaken. Hier delen we waar wij van houden, zodat je interieur niet ingericht voelt, maar geleefd.</p>
-
-    <div class="insp-grid">
-      <article class="insp">
-        <span class="insp-no">01</span>
-        <h3>Durf te mengen</h3>
-        <p>Strak mid-century naast barok goud, ruw hout tegen glanzend messing. Het mooiste interieur wrijft tijdperken tegen elkaar aan &mdash; het contrast maakt een kamer levend, nooit een museum.</p>
-      </article>
-      <article class="insp">
-        <span class="insp-no">02</span>
-        <h3>E&eacute;n stuk verandert alles</h3>
-        <p>Je hebt geen kamer vol antiek nodig. E&eacute;n ankerpunt &mdash; een Italiaans dressoir, een oranje fauteuil, een icoon met een naam &mdash; tilt een hele ruimte op en geeft de rest betekenis.</p>
-      </article>
-      <article class="insp">
-        <span class="insp-no">03</span>
-        <h3>De schoonheid van sporen</h3>
-        <p>Een lichte slijtage, een warme patina, de hand van de maker nog zichtbaar. Dat zijn geen gebreken maar bewijs van een geleefd leven. Perfectie is voor fabrieken; karakter komt met de jaren.</p>
-      </article>
-      <article class="insp">
-        <span class="insp-no">04</span>
-        <h3>De jacht</h3>
-        <p>Het zeldzame stuk vind je niet, het komt op je pad. Wij speuren zodat jij straks dat ene ontwerp in huis hebt dat niemand anders heeft &mdash; en het verhaal erbij om het te vertellen.</p>
-      </article>
-    </div>
-
-    <p class="insp-foot">Iets gezien in de showroom dat je raakt? <button class="link-btn" data-view="showroom">Terug naar de zaal &rarr;</button></p>
+  <!-- ============ ALLE PRODUCTEN ============ -->
+  <section id="view-producten" hidden>
+    <p class="eyebrow-big">Catalogus</p>
+    <h1 class="lead">Alle producten.</h1>
+    <p class="sub">Alles wat nu binnen is, op een rij &mdash; klik voor het verhaal.</p>
+    <div class="grid" id="grid"><!-- via app.js --></div>
+    <p class="insp-foot"><button class="link-btn" data-view="showroom">&larr; Terug naar het huis</button></p>
   </section>
 
-  <footer><span data-merk>[ jouw merk ]</span> &middot; Loud antiques, new generation</footer>
+  <footer><span data-merk>Antiek in het Antiek</span> &middot; Loud antiques, new generation</footer>
 </div>
 
 <div class="scrim" id="scrim"></div>
