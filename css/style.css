@@ -31,7 +31,7 @@ a{color:inherit}
 .tab.active{background:var(--taupe);color:var(--ink)}
 
 /* logo: compact en gecentreerd, strak boven de foto */
-.logo-banner{display:block;height:clamp(78px,11vw,128px);width:auto;max-width:100%;margin:0 auto 4px}
+.logo-banner{display:block;height:clamp(179px,25.3vw,294px);width:auto;max-width:100%;margin:0 auto 4px}
 
 .lead{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4.4vw,44px);line-height:1.04;letter-spacing:-.01em;max-width:20ch;margin:8px 0 6px}
 .lead em{font-style:italic;color:var(--taupe)}
