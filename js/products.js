@@ -9,7 +9,7 @@
 const CONTACT = {
   email:    "jouw@email.nl",          // <-- VUL IN: hier komen aanvragen binnen
   whatsapp: "",                       // <-- optioneel: bv "31612345678"
-  merk:     "Antiek in het Antiek"
+  merk:     "Heuvels en Meubels"
 };
 
 const PRODUCTS = [
