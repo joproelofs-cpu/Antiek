@@ -23,14 +23,15 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;o
 a{color:inherit}
 
 /* slanke bovenbalk met alleen de tabs */
-.topnav{display:flex;justify-content:flex-end;gap:4px;margin-bottom:2px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:2px}
+.nav-left,.nav-right{display:flex;gap:4px}
 .tab{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
   border:none;background:transparent;color:var(--bone-dim);padding:8px 12px;border-radius:999px;cursor:pointer;transition:.18s}
 .tab:hover{color:var(--bone)}
 .tab.active{background:var(--taupe);color:var(--ink)}
 
-/* groot logo, volle breedte (net zo breed als de foto), taupe, uitgeknipt */
-.logo-banner{display:block;width:100%;height:auto;margin:0}
+/* logo: compact en gecentreerd, strak boven de foto */
+.logo-banner{display:block;height:clamp(78px,11vw,128px);width:auto;max-width:100%;margin:0 auto 4px}
 
 .lead{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4.4vw,44px);line-height:1.04;letter-spacing:-.01em;max-width:20ch;margin:8px 0 6px}
 .lead em{font-style:italic;color:var(--taupe)}
@@ -136,3 +137,12 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .insp-foot{margin-top:26px;font-size:15px;color:var(--bone-dim)}
 .link-btn{font:inherit;color:var(--taupe);background:none;border:none;cursor:pointer;padding:0;font-weight:700}
 .link-btn:hover{color:var(--bone);text-decoration:underline}
+
+/* contact */
+.contact-list{display:flex;flex-direction:column;gap:2px;margin:6px 0 8px;max-width:520px}
+.contact-row{display:flex;align-items:center;justify-content:space-between;gap:16px;text-decoration:none;
+  border-top:1px solid var(--line);padding:16px 2px;transition:.15s}
+.contact-row:last-child{border-bottom:1px solid var(--line)}
+.contact-row span{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-dim)}
+.contact-row b{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--bone)}
+.contact-row:hover b{color:var(--taupe)}

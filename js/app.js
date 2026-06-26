@@ -92,16 +92,23 @@ document.getElementById('close').addEventListener('click', closePanel);
 scrim.addEventListener('click', closePanel);
 document.addEventListener('keydown', e => { if(e.key==='Escape') closePanel(); });
 
-/* ---- tabs: Showroom / Alle producten ---- */
+/* ---- tabs: Showroom / Alle producten / Contact ---- */
 function showView(view){
-  document.getElementById('view-showroom').hidden = (view !== 'showroom');
-  document.getElementById('view-producten').hidden = (view !== 'producten');
-  document.querySelectorAll('[data-view]').forEach(t =>
-    t.classList && t.classList.contains('tab') && t.classList.toggle('active', t.dataset.view === view));
+  document.querySelectorAll('section[id^="view-"]').forEach(s => s.hidden = (s.id !== 'view-' + view));
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.view === view));
   window.scrollTo({ top:0, behavior:'smooth' });
 }
 document.querySelectorAll('[data-view]').forEach(el =>
   el.addEventListener('click', () => showView(el.dataset.view)));
+
+/* ---- contactgegevens invullen ---- */
+(function(){
+  const e = document.getElementById('c-email');
+  if (e){ e.href = 'mailto:' + CONTACT.email; document.getElementById('c-email-v').textContent = CONTACT.email; }
+  const w = document.getElementById('c-wa');
+  if (w && CONTACT.whatsapp){ w.hidden = false; w.href = 'https://wa.me/' + CONTACT.whatsapp;
+    document.getElementById('c-wa-v').textContent = '+' + CONTACT.whatsapp; }
+})();
 
 /* ---- merknaam invullen ---- */
 document.querySelectorAll('[data-merk]').forEach(el => el.textContent = CONTACT.merk);

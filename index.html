@@ -13,8 +13,13 @@
 <body>
 <div class="wrap">
   <nav class="topnav" aria-label="Hoofdmenu">
-    <button class="tab active" data-view="showroom">Showroom</button>
-    <button class="tab" data-view="producten">Alle producten</button>
+    <div class="nav-left">
+      <button class="tab" data-view="contact">Contact</button>
+    </div>
+    <div class="nav-right">
+      <button class="tab active" data-view="showroom">Showroom</button>
+      <button class="tab" data-view="producten">Alle producten</button>
+    </div>
   </nav>
 
   <!-- ============ SHOWROOM (kamers) ============ -->
@@ -59,6 +64,18 @@
     <h1 class="lead">Alle producten.</h1>
     <p class="sub">Alles wat nu binnen is, op een rij &mdash; klik voor het verhaal.</p>
     <div class="grid" id="grid"><!-- via app.js --></div>
+    <p class="insp-foot"><button class="link-btn" data-view="showroom">&larr; Terug naar het huis</button></p>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="view-contact" hidden>
+    <p class="eyebrow-big">Contact</p>
+    <h1 class="lead">Even contact.</h1>
+    <p class="sub">Interesse in een stuk, of zelf iets bijzonders aan te bieden? Stuur een bericht &mdash; we reageren snel.</p>
+    <div class="contact-list">
+      <a class="contact-row" id="c-email" href="#"><span>E-mail</span><b id="c-email-v"></b></a>
+      <a class="contact-row" id="c-wa" href="#" hidden><span>WhatsApp</span><b id="c-wa-v"></b></a>
+    </div>
     <p class="insp-foot"><button class="link-btn" data-view="showroom">&larr; Terug naar het huis</button></p>
   </section>
 
