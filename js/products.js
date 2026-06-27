@@ -114,7 +114,7 @@ const ROOMS = [
       { type:"product", id:"kapstok", x:11, y:42 },
       { type:"product", id:"trolley", x:27, y:64 },
       { type:"product", id:"buste",   x:80, y:33 },
-      { type:"room",    to:"woonkamer", label:"Woonkamer", x:57, y:40 }
+      { type:"room",    to:"woonkamer", label:"Ga naar de woonkamer", x:82, y:91 }
     ]
   },
   {
