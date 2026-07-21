@@ -146,3 +146,32 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .contact-row span{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--bone-dim)}
 .contact-row b{font-family:'Fraunces',serif;font-weight:600;font-size:19px;color:var(--bone)}
 .contact-row:hover b{color:var(--taupe)}
+
+/* ---- about: fotocollage ---- */
+.collage{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:10px;margin:24px 0 10px}
+.collage img{width:100%;height:100%;object-fit:cover;border-radius:10px;display:block;border:1px solid var(--line)}
+.collage .c1{grid-column:span 2;grid-row:span 2}
+.collage .c2{grid-column:span 2}
+.collage .c3{grid-column:span 1}
+.collage .c4{grid-column:span 1}
+.collage .c5{grid-column:span 4}
+@media(max-width:640px){.collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px}.collage .c1{grid-column:span 2}.collage .c5{grid-column:span 2}}
+.collage-note{font-size:12px;color:var(--bone-dim);opacity:.75;margin:6px 0 22px}
+.collage-note code{font-family:'Spline Sans Mono',monospace;background:var(--ox);padding:1px 5px;border-radius:4px}
+
+/* ---- about: designer-namen strip ---- */
+.about-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;margin:8px 0 22px;
+  display:flex;flex-direction:column;gap:6px}
+.strip-label{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-dim)}
+.strip-names{font-family:'Fraunces',serif;font-size:22px;color:var(--taupe)}
+
+/* ---- about: bedrijfsgegevens ---- */
+.biz{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px 24px;margin:0 0 8px}
+.biz > div{border-top:1px solid var(--line);padding:12px 0;display:flex;justify-content:space-between;gap:14px}
+.biz dt{font-family:'Spline Sans Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--bone-dim);margin:0}
+.biz dd{margin:0;text-align:right;font-weight:500;color:var(--bone)}
+.biz a{color:var(--taupe)}
+
+/* ---- footer social ---- */
+.foot-social{color:var(--taupe);text-decoration:none}
+.foot-social:hover{color:var(--bone);text-decoration:underline}

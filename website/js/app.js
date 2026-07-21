@@ -2,16 +2,16 @@
    het productpaneel en het overzicht 'Alle producten'.
    Inhoud staat in products.js — dit bestand hoef je niet te bewerken. */
 
-const TIER_LABEL = { A:"Laag A \u00b7 instapper", B:"Laag B \u00b7 middensegment", C:"Laag C \u00b7 topstuk" };
+const TIER_LABEL = { A:"Entry piece", B:"Mid-range", C:"Signature piece" };
 const byId   = id => PRODUCTS.find(p => p.id === id);
 const roomById = id => ROOMS.find(r => r.id === id);
 let currentRoom = ROOMS[0].id;
 
 /* ---- aanvraag-/koop-knop ---- */
 function inquiryHref(p){
-  const t = `Hallo, ik heb interesse in: ${p.naam} (${p.prijs}). Is dit nog beschikbaar?`;
+  const t = `Hi, I'm interested in: ${p.naam} (${p.prijs}). Is it still available?`;
   if (CONTACT.whatsapp) return "https://wa.me/" + CONTACT.whatsapp + "?text=" + encodeURIComponent(t);
-  return "mailto:" + CONTACT.email + "?subject=" + encodeURIComponent("Interesse: " + p.naam) +
+  return "mailto:" + CONTACT.email + "?subject=" + encodeURIComponent("Enquiry: " + p.naam) +
          "&body=" + encodeURIComponent(t);
 }
 
@@ -83,8 +83,8 @@ function openPanel(id){
   document.getElementById('price').innerHTML = p.prijs + (p.prijsNoot ? ` <small>${p.prijsNoot}</small>` : '');
   const cta = document.getElementById('cta');
   cta.innerHTML = p.betaallink
-    ? `<a class="primary" href="${p.betaallink}">Direct afrekenen</a><a class="ghost" href="${inquiryHref(p)}">Vraag info</a>`
-    : `<a class="primary" href="${inquiryHref(p)}">Reserveer / vraag aan</a>`;
+    ? `<a class="primary" href="${p.betaallink}">Buy now</a><a class="ghost" href="${inquiryHref(p)}">Ask a question</a>`
+    : `<a class="primary" href="${inquiryHref(p)}">Reserve / enquire</a>`;
   panel.classList.add('open'); scrim.classList.add('open');
 }
 function closePanel(){ panel.classList.remove('open'); scrim.classList.remove('open'); }
@@ -110,8 +110,10 @@ document.querySelectorAll('[data-view]').forEach(el =>
     document.getElementById('c-wa-v').textContent = '+' + CONTACT.whatsapp; }
 })();
 
-/* ---- merknaam invullen ---- */
+/* ---- brand name, KVK & TikTok ---- */
 document.querySelectorAll('[data-merk]').forEach(el => el.textContent = CONTACT.merk);
+document.querySelectorAll('[data-kvk]').forEach(el => el.textContent = CONTACT.kvk);
+document.querySelectorAll('[data-tiktok]').forEach(el => { if (CONTACT.tiktok) el.href = CONTACT.tiktok; });
 
 renderRoom();
 renderGrid();
