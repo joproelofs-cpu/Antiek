@@ -2,16 +2,20 @@
    het productpaneel en het overzicht 'Alle producten'.
    Inhoud staat in products.js — dit bestand hoef je niet te bewerken. */
 
-const TIER_LABEL = { A:"Laag A \u00b7 instapper", B:"Laag B \u00b7 middensegment", C:"Laag C \u00b7 topstuk" };
+const TIER_LABEL = { A:"Entry piece", B:"Mid-range", C:"Signature piece" };
+const COLLECTION = (window.CR_COLLECTION === 'midcentury') ? 'midcentury' : 'antique';
+const PRODUCTS = CATALOG.filter(p => p.collection === COLLECTION);
+const ROOMS = (COLLECTION === 'midcentury') ? ROOMS_MC : ROOMS_ANTIQUE;
+const productUrl = id => 'product.html?id=' + encodeURIComponent(id);
 const byId   = id => PRODUCTS.find(p => p.id === id);
 const roomById = id => ROOMS.find(r => r.id === id);
 let currentRoom = ROOMS[0].id;
 
 /* ---- aanvraag-/koop-knop ---- */
 function inquiryHref(p){
-  const t = `Hallo, ik heb interesse in: ${p.naam} (${p.prijs}). Is dit nog beschikbaar?`;
+  const t = `Hi, I'm interested in: ${p.naam} (${p.prijs}). Is it still available?`;
   if (CONTACT.whatsapp) return "https://wa.me/" + CONTACT.whatsapp + "?text=" + encodeURIComponent(t);
-  return "mailto:" + CONTACT.email + "?subject=" + encodeURIComponent("Interesse: " + p.naam) +
+  return "mailto:" + CONTACT.email + "?subject=" + encodeURIComponent("Enquiry: " + p.naam) +
          "&body=" + encodeURIComponent(t);
 }
 
@@ -61,7 +65,7 @@ function renderGrid(){
       </div>
     </article>`).join('');
   grid.querySelectorAll('.card').forEach(c => {
-    const open = () => openPanel(c.dataset.id);
+    const open = () => { location.href = productUrl(c.dataset.id); };
     c.addEventListener('click', open);
     c.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(); }});
   });
@@ -82,9 +86,8 @@ function openPanel(id){
   document.getElementById('story').textContent = p.verhaal;
   document.getElementById('price').innerHTML = p.prijs + (p.prijsNoot ? ` <small>${p.prijsNoot}</small>` : '');
   const cta = document.getElementById('cta');
-  cta.innerHTML = p.betaallink
-    ? `<a class="primary" href="${p.betaallink}">Direct afrekenen</a><a class="ghost" href="${inquiryHref(p)}">Vraag info</a>`
-    : `<a class="primary" href="${inquiryHref(p)}">Reserveer / vraag aan</a>`;
+  cta.innerHTML = `<a class="primary" href="${productUrl(p.id)}">View &amp; buy \u2192</a>`
+                + `<a class="ghost" href="${inquiryHref(p)}">Ask a question</a>`;
   panel.classList.add('open'); scrim.classList.add('open');
 }
 function closePanel(){ panel.classList.remove('open'); scrim.classList.remove('open'); }
@@ -101,6 +104,10 @@ function showView(view){
 document.querySelectorAll('[data-view]').forEach(el =>
   el.addEventListener('click', () => showView(el.dataset.view)));
 
+/* ---- spotlight: open product panel ---- */
+document.querySelectorAll('[data-open]').forEach(el =>
+  el.addEventListener('click', () => { location.href = productUrl(el.dataset.open); }));
+
 /* ---- contactgegevens invullen ---- */
 (function(){
   const e = document.getElementById('c-email');
@@ -110,8 +117,66 @@ document.querySelectorAll('[data-view]').forEach(el =>
     document.getElementById('c-wa-v').textContent = '+' + CONTACT.whatsapp; }
 })();
 
-/* ---- merknaam invullen ---- */
+/* ---- brand name, KVK & TikTok ---- */
 document.querySelectorAll('[data-merk]').forEach(el => el.textContent = CONTACT.merk);
+document.querySelectorAll('[data-kvk]').forEach(el => el.textContent = CONTACT.kvk);
+document.querySelectorAll('[data-tiktok]').forEach(el => { if (CONTACT.tiktok) el.href = CONTACT.tiktok; });
 
 renderRoom();
 renderGrid();
+
+/* ---- welcome: Antique / Mid Century / All Products ---- */
+(function(){
+  const intro = document.getElementById('intro');
+  if (!intro) return;
+  function enter(view){
+    if (view) showView(view);
+    intro.classList.add('gone');
+    setTimeout(() => { intro.style.display = 'none'; }, 650);
+  }
+  document.getElementById('go-antique')?.addEventListener('click', () => enter('showroom'));
+  document.getElementById('go-allproducts')?.addEventListener('click', () => enter('producten'));
+  document.getElementById('go-midcentury')?.addEventListener('click', () => {
+    window.location.href = 'midcentury.html';
+  });
+})();
+
+/* ---- betaal-bevestiging na terugkeer van Mollie ---- */
+(function(){
+  const params = new URLSearchParams(location.search);
+  if (params.has('paid')) {
+    const s = document.getElementById('view-showroom');
+    if (s) {
+      const n = document.createElement('div');
+      n.className = 'paid-note';
+      n.textContent = 'Thank you! We received your request and will confirm your order by email.';
+      s.insertBefore(n, s.firstChild);
+    }
+  }
+})();
+
+/* ---- showroom dropdown: switch between Antique & Mid Century ---- */
+(function(){
+  const dd = document.querySelector('.dropdown');
+  const toggle = document.querySelector('.dd-toggle');
+  if (dd && toggle){
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dd.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', dd.classList.contains('open'));
+    });
+    document.addEventListener('click', () => dd.classList.remove('open'));
+  }
+  const current = location.pathname.indexOf('midcentury') !== -1 ? 'midcentury' : 'antique';
+  document.querySelectorAll('.dd-item').forEach(a => {
+    a.addEventListener('click', (e) => {
+      if (a.dataset.world === current){ e.preventDefault(); showView('showroom'); dd && dd.classList.remove('open'); }
+    });
+  });
+  const params = new URLSearchParams(location.search);
+  if (params.has('enter') || params.has('view')){
+    const intro = document.getElementById('intro');
+    if (intro) intro.style.display = 'none';
+    showView(params.get('view') || 'showroom');
+  }
+})();

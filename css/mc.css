@@ -1,0 +1,24 @@
+/* Mid Century — licht oranje thema (overschrijft style.css) */
+:root{
+  --ox-deep:#FBEEDC;     /* pagina-achtergrond: licht oranje/crème */
+  --ox:#FFF7EC;          /* kaarten / paneel */
+  --ox-lift:#F1DFC6;
+  --taupe:#B23809;       /* PRIMAIR: mid-century oranje */
+  --taupe-d:#C6410F;
+  --brass:#2F6F6A;       /* SECUNDAIR: teal */
+  --brass-lite:#2F6F6A;
+  --bone:#3A2A1E;        /* tekst: donkerbruin */
+  --bone-dim:#7C6552;
+  --moss:#2F6F6A;
+  --ink:#FFF7EC;         /* tekst op oranje/teal knoppen: crème */
+  --studio:#D9C6AD;
+  --line:rgba(58,42,30,.16);
+  --shadow:0 12px 28px -14px rgba(120,60,20,.26);
+}
+body::after{opacity:.02}                                   /* minder korrel op licht */
+.tip{background:#2A1D12;color:#FFF7EC;border-color:transparent}
+.panel .close{background:rgba(255,247,236,.92);color:#3A2A1E}
+.hs-room .door{background:rgba(255,247,236,.9);color:#3A2A1E}
+.scrim{background:rgba(58,32,14,.4)}
+/* logo op licht: donkere variant */
+.logo-banner{content:none}

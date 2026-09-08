@@ -3,22 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Collector's Room</title>
+<title>Collector's Room — Mid Century</title>
 <meta name="description" content="Antiques with character. Rare, authentic mid-century and design pieces with a story. A father-and-son business.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Caveat:wght@500;600&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/mc.css">
 </head>
 <body>
-<div id="intro">
-  <img class="welcome-logo" src="images/logo.png" alt="Collector's Room">
-  <div class="choices">
-    <button id="go-antique" class="choice-btn antique">Antique</button>
-    <button id="go-midcentury" class="choice-btn midcentury">Mid&nbsp;Century</button>
-  </div>
-  <button id="go-allproducts" class="allprod-btn">All Products</button>
-</div>
 <div class="wrap">
   <nav class="topnav" aria-label="Menu">
     <div class="nav-left">
@@ -39,23 +32,23 @@
 
   <!-- ============ SHOWROOM ============ -->
   <section id="view-showroom">
-    <img class="logo-banner" src="images/logo.png" alt="Collector's Room">
+    <img class="logo-banner" src="images/logo-mc.png" alt="Collector's Room">
 
     <div class="stage-shell">
       <div class="stage" id="stage">
-        <img class="stage-bg" id="stage-bg" src="images/hal.jpg" alt="The hallway">
+        <img class="stage-bg" id="stage-bg" src="images/mc-room.jpg" alt="The mid-century room">
       </div>
     </div>
 
     <!-- SPOTLIGHT -->
     <div class="spotlight">
-      <div class="spot-media"><img src="images/spiegel.jpg" alt="Gilded floor mirror"></div>
+      <div class="spot-media"><img src="images/mc-oranje.jpg" alt="Orange lounge chair"></div>
       <div class="spot-text">
         <p class="eyebrow">In the spotlight</p>
-        <h2 class="spot-title">Gilded floor mirror, oval</h2>
-        <p class="spot-story">Unapologetically lavish &mdash; a tilting full-length mirror in a gilded floral relief with a draped swag. Pure baroque excess, exactly where minimalism ends. One of one.</p>
-        <div class="spot-price">&euro;2.200 <small>indicative</small></div>
-        <button class="primary spot-btn" data-open="spiegel">View this piece</button>
+        <h2 class="spot-title">Orange &amp; yellow swivel lounge chair</h2>
+        <p class="spot-story">Pure 1970s optimism. A moulded yellow shell wrapped in warm orange velvet, spinning on a swivel base &mdash; the kind of chair a whole room is built around.</p>
+        <div class="spot-price">&euro;1.250 <small>indicative</small></div>
+        <button class="primary spot-btn" data-open="mc_lounge">View this piece</button>
       </div>
     </div>
 
@@ -65,11 +58,11 @@
       <h2 class="explore-h">Stories, profiles &amp; more</h2>
       <div class="explore-grid">
         <button class="ex-card big" data-view="about">
-          <span class="ex-img" style="background-image:url('images/woonkamer.jpg')"></span>
+          <span class="ex-img" style="background-image:url('images/mc-room.jpg')"></span>
           <span class="ex-txt"><span class="ex-eye">Explore</span><span class="ex-title">About us</span><span class="ex-sub">The father &amp; son behind Collector's Room</span></span>
         </button>
         <button class="ex-card" data-view="terms">
-          <span class="ex-img" style="background-image:url('images/trolley.jpg')"></span>
+          <span class="ex-img" style="background-image:url('images/mc-barkast.jpg')"></span>
           <span class="ex-txt"><span class="ex-eye">How it works</span><span class="ex-title">Secure payment</span><span class="ex-sub">Pay safely by iDEAL &amp; card via Mollie</span></span>
         </button>
         <a class="ex-card" href="https://www.google.com/maps/search/?api=1&amp;query=Donnerskamp+2+Koningsbosch" target="_blank" rel="noopener">
@@ -219,7 +212,7 @@
   </div>
 </aside>
 
-<script>window.CR_COLLECTION='antique';</script>
+<script>window.CR_COLLECTION='midcentury';</script>
 <script src="js/catalog.js"></script>
 <script src="js/app.js"></script>
 </body>

@@ -1,0 +1,4 @@
+# systeem-rommel die niet in je repo hoort
+.DS_Store
+Thumbs.db
+*.log
