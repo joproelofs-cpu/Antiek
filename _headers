@@ -1,19 +1,13 @@
 /*
   Cache-Control: no-cache
 
-/*.js
+/js/app.js
   Cache-Control: no-cache
 
-/*.css
+/css/style.css
   Cache-Control: no-cache
 
-/*.html
-  Cache-Control: no-cache
-
-/js/*
-  Cache-Control: no-cache
-
-/css/*
+/css/mc.css
   Cache-Control: no-cache
 
 /images/*
