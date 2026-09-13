@@ -99,11 +99,11 @@ document.addEventListener('keydown', e => { if(e.key==='Escape') closePanel(); }
 
 /* ---- tabs: Showroom / Alle producten / Contact ---- */
 function setCatalogueTheme(on){
-  let link = document.querySelector('link[href="css/mc.css"]');
+  let link = document.querySelector('link[href^="css/mc.css"]');
   if (on){
     if (!link){
       link = document.createElement('link');
-      link.rel = 'stylesheet'; link.href = 'css/mc.css';
+      link.rel = 'stylesheet'; link.href = 'css/mc.css?v=2';
       link.dataset.injected = 'true';
       document.head.appendChild(link);
     }
