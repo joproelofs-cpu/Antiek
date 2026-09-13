@@ -11,7 +11,7 @@ const PRODUCTS = {
   fauteuil: { value: 1650, ship: "L", name: "Black & white swivel chair" },
   tafel:    { value: 1900, ship: "L", name: "Wooden coffee table" },
   rolkast:  { value: 1450, ship: "L", name: "Op art rolling cabinet" },
-  mc_lounge:{ value: 1250, ship: "L", name: "Orange & yellow swivel lounge chair" },
+  mc_lounge:{ value: 850,  ship: "L", name: "Orange & yellow swivel lounge chair" },
   mc_bar:   { value: 1450, ship: "L", name: "Chrome & smoked glass bar cart" },
   mc_green: { value: 680,  ship: "M", name: "Green leather office chair" }
 };

@@ -30,7 +30,7 @@ const SHIP_RATES = {
 };
 
 const CATALOG = [
-  { id:"kapstok", collection:"antique", ship:"L",
+  { id:"kapstok", collection:"antique", ship:"L", showFull:true,
     naam:"Space age coat stand in cream", categorie:"Coat stand \u00b7 sculptural", laag:"B",
     prijs:"\u20ac480", prijsNoot:"indicative", foto:"images/kapstok.jpg",
     specs:[["Period","1970s"],["Style","Italian space age"],["Material","cream plastic"],["Condition","good vintage condition"]],
@@ -40,12 +40,12 @@ const CATALOG = [
     prijs:"\u20ac95", prijsNoot:"indicative", foto:"images/buste.jpg",
     specs:[["Subject","David, after Michelangelo"],["Material","bronze & copper"],["Base","gilded"],["Condition","warm, lived in patina"]],
     verhaal:"No plaster, no copy of a copy. Solid bronze with a patina that took years, on a gilded base. Put it on a plinth and the room bends toward it." },
-  { id:"trolley", collection:"antique", ship:"L",
+  { id:"trolley", collection:"antique", ship:"L", showFull:true,
     naam:"Boby trolley \u00b7 Joe Colombo", categorie:"Icons \u00b7 design classic", laag:"C",
     prijs:"\u20ac248", prijsNoot:"indicative", foto:"images/trolley.jpg",
     specs:[["Designer","Joe Colombo"],["Maker","Bieffeplast"],["Type","mobile trolley"],["Colour","black"]],
     verhaal:"The icon collectors search for by name. Joe Colombo's Boby: swivelling drawers, rolls wherever you want, designed when the future was still made of plastic. Design history on wheels." },
-  { id:"spiegel", collection:"antique", ship:"L",
+  { id:"spiegel", collection:"antique", ship:"L", showFull:true,
     naam:"Gilded floor mirror, oval", categorie:"Mirrors \u00b7 statement", laag:"C",
     prijs:"\u20ac2.200", prijsNoot:"indicative", foto:"images/spiegel.jpg",
     specs:[["Shape","oval, tilting"],["Frame","gilded floral relief"],["Detail","draped swag"],["Type","cheval / full length"]],
@@ -66,9 +66,9 @@ const CATALOG = [
     specs:[["Period","1970s"],["Style","pop / op art"],["Motif","circle in orange & pink"],["Base","on castors"]],
     verhaal:"A cabinet that shouts. Cream with a bright orange circle in a pink ring, on castors. Pop art you can't hide anywhere. For anyone done with boring storage." },
 
-  { id:"mc_lounge", collection:"midcentury", ship:"L",
+  { id:"mc_lounge", collection:"midcentury", ship:"L", sold:true,
     naam:"Orange & yellow swivel lounge chair", categorie:"Seating \u00b7 space age", laag:"C",
-    prijs:"\u20ac1.250", prijsNoot:"indicative", foto:"images/mc-oranje.jpg",
+    prijs:"\u20ac850", prijsNoot:"indicative", foto:"images/mc-oranje.jpg",
     specs:[["Period","1970s"],["Shell","yellow moulded"],["Upholstery","orange velvet"],["Base","swivel"]],
     verhaal:"Pure 1970s optimism. A moulded yellow shell wrapped in warm orange velvet, spinning on a swivel base. The kind of chair a room is built around." },
   { id:"mc_bar", collection:"midcentury", ship:"L",

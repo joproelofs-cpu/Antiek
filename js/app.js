@@ -58,7 +58,7 @@ function renderGrid(list){
   const products = list || ALL_PRODUCTS;
   const grid = document.getElementById('grid');
   grid.innerHTML = products.map(p => `
-    <article class="card${p.sold ? ' sold' : ''}" tabindex="0" role="button" aria-label="${p.naam}" data-id="${p.id}">
+    <article class="card${p.sold ? ' sold' : ''}${p.showFull ? ' show-full' : ''}" tabindex="0" role="button" aria-label="${p.naam}" data-id="${p.id}">
       <div class="card-img">
         <img src="${p.foto}" alt="${p.naam}" loading="lazy">
         ${p.sold ? '<span class="sold-tint"></span><span class="sold-stamp">Sold</span>' : ''}
@@ -106,7 +106,7 @@ function setCatalogueTheme(on){
   if (on){
     if (!link){
       link = document.createElement('link');
-      link.rel = 'stylesheet'; link.href = 'css/mc.css?v=5';
+      link.rel = 'stylesheet'; link.href = 'css/mc.css?v=6';
       link.dataset.injected = 'true';
       document.head.appendChild(link);
     }
