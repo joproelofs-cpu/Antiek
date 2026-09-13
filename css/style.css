@@ -23,12 +23,15 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;o
 a{color:inherit}
 
 /* slanke bovenbalk met alleen de tabs */
-.topnav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:2px}
+.topnav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:2px;flex-wrap:wrap;row-gap:6px}
 .nav-left,.nav-right{display:flex;gap:4px}
-.tab{font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+.tab{font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
   border:none;background:transparent;color:var(--bone-dim);padding:12px 18px;border-radius:999px;cursor:pointer;transition:.18s}
 .tab:hover{color:var(--bone)}
 .tab.active{background:var(--taupe);color:var(--ink)}
+@media(max-width:480px){
+  .tab{padding:8px 11px;font-size:11px;letter-spacing:.06em}
+}
 
 /* logo: compact en gecentreerd, strak boven de foto */
 .logo-banner{display:block;height:clamp(75px,10.5vw,120px);width:auto;max-width:100%;margin:8px auto 30px}
