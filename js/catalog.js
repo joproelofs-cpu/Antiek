@@ -42,7 +42,7 @@ const CATALOG = [
     verhaal:"No plaster, no copy of a copy. Solid bronze with a patina that took years, on a gilded base. Put it on a plinth and the room bends toward it." },
   { id:"trolley", collection:"antique", ship:"L", showFull:true,
     naam:"Boby trolley \u00b7 Joe Colombo", categorie:"Icons \u00b7 design classic", laag:"C",
-    prijs:"\u20ac248", prijsNoot:"indicative", foto:"images/trolley.jpg",
+    prijs:"\u20ac248", prijsNoot:"indicative", foto:"images/trolley-full.jpg",
     specs:[["Designer","Joe Colombo"],["Maker","Bieffeplast"],["Type","mobile trolley"],["Colour","black"]],
     verhaal:"The icon collectors search for by name. Joe Colombo's Boby: swivelling drawers, rolls wherever you want, designed when the future was still made of plastic. Design history on wheels." },
   { id:"spiegel", collection:"antique", ship:"L", showFull:true,
