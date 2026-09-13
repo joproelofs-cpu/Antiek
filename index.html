@@ -33,7 +33,10 @@
         </div>
       </div>
       <button class="tab" data-view="producten">All Products</button>
-      <button class="tab" data-view="about">About us</button>
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" id="site-search" class="search-input" placeholder="Search" aria-label="Search products">
+      </div>
     </div>
   </nav>
 
@@ -51,8 +54,11 @@
     <div class="ambience">
       <p class="eyebrow-big">Atmosphere</p>
       <div class="ambience-grid">
-        <img src="images/ambience-trolley.jpg" alt="Boby trolley styled in a collector's room">
+        <img src="images/strip-glassware.jpg" alt="Cocktail glasses on the bar cart">
         <img src="images/ambience-barcart.jpg" alt="Chrome and smoked glass bar cart in the room">
+        <img src="images/ambience-trolley.jpg" alt="Boby trolley styled in a collector's room">
+        <img src="images/strip-workshop.jpg" alt="Behind the scenes at the workshop">
+        <img src="images/strip-styling.jpg" alt="Styling a mid-century piece">
       </div>
     </div>
 
@@ -73,9 +79,9 @@
       <p class="eyebrow-big center">Explore</p>
       <h2 class="explore-h">Stories, profiles &amp; more</h2>
       <div class="explore-grid">
-        <button class="ex-card big" data-view="about">
+        <button class="ex-card big" data-view="producten">
           <span class="ex-img" style="background-image:url('images/woonkamer.jpg')"></span>
-          <span class="ex-txt"><span class="ex-eye">Explore</span><span class="ex-title">About us</span><span class="ex-sub">The father &amp; son behind Collector's Room</span></span>
+          <span class="ex-txt"><span class="ex-eye">Browse</span><span class="ex-title">The full collection</span><span class="ex-sub">Every piece currently in stock</span></span>
         </button>
         <button class="ex-card" data-view="terms">
           <span class="ex-img" style="background-image:url('images/trolley.jpg')"></span>
@@ -108,40 +114,8 @@
   <section id="view-producten" hidden>
     <p class="eyebrow-big">Catalogue</p>
     <h1 class="lead">All pieces.</h1>
-    <p class="sub">Everything currently in stock. Click for the story.</p>
+    <p class="sub" id="grid-sub">Everything currently in stock. Click for the story.</p>
     <div class="grid" id="grid"></div>
-    <p class="insp-foot"><button class="link-btn" data-view="showroom">&larr; Back to the showroom</button></p>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section id="view-about" hidden>
-    <p class="eyebrow-big">About</p>
-    <h1 class="lead">A father &amp; son.</h1>
-    <p class="sub wide">Collector's Room is a father and son with a shared obsession for antiques. What our fathers taught us the old way, we now do young, turning the hunt into a new kind of story. We comb markets and estates for the loud, the rare and the gloriously over the top, and bring it to a new generation.</p>
-    <p class="signature">Every piece passes through our hands first: sourced, vetted and packed with care.<span class="sig-name">Jop &amp; his father</span></p>
-
-    <div class="collage">
-      <img class="c1" src="images/woonkamer.jpg" alt="A styled room">
-      <img class="c2" src="images/hal.jpg" alt="The hallway">
-      <img class="c3" src="images/fauteuil.jpg" alt="A design chair">
-      <img class="c4" src="images/rolkast.jpg" alt="An op art cabinet">
-      <img class="c5" src="images/buste.jpg" alt="A bronze bust">
-    </div>
-    <p class="collage-note">These are placeholder images. Replace them with your own photos (the two of you, the workshop, the markets) by dropping them into the <code>images/</code> folder and pointing the <code>src</code> here to them.</p>
-
-    <div class="about-strip">
-      <span class="strip-label">Names that have passed through our hands</span>
-      <span class="strip-names">Joe Colombo &middot; Bieffeplast &middot; Pastoe &middot; Italian design houses</span>
-    </div>
-
-    <dl class="biz">
-      <div><dt>Company</dt><dd data-merk>Collector's Room</dd></div>
-      <div><dt>Chamber of Commerce (KVK)</dt><dd data-kvk>84405252</dd></div>
-      <div><dt>Location</dt><dd>Donnerskamp 2, Koningsbosch</dd></div>
-      <div><dt>Payment</dt><dd>iDEAL &amp; card via Mollie</dd></div>
-      <div><dt>Email</dt><dd><a href="mailto:zakelijk.roelofs@gmail.com">zakelijk.roelofs@gmail.com</a></dd></div>
-      <div><dt>Follow</dt><dd><a data-tiktok href="https://www.tiktok.com/@collectors.room" target="_blank" rel="noopener">TikTok @collectors.room</a></dd></div>
-    </dl>
     <p class="insp-foot"><button class="link-btn" data-view="showroom">&larr; Back to the showroom</button></p>
   </section>
 

@@ -54,9 +54,10 @@ function renderRoom(){
 }
 
 /* ---- overzicht: alle producten ---- */
-function renderGrid(){
+function renderGrid(list){
+  const products = list || ALL_PRODUCTS;
   const grid = document.getElementById('grid');
-  grid.innerHTML = ALL_PRODUCTS.map(p => `
+  grid.innerHTML = products.map(p => `
     <article class="card" tabindex="0" role="button" aria-label="${p.naam}" data-id="${p.id}">
       <div class="card-img"><img src="${p.foto}" alt="${p.naam}" loading="lazy"></div>
       <div class="card-b">
@@ -114,10 +115,40 @@ function showView(view){
   document.querySelectorAll('section[id^="view-"]').forEach(s => s.hidden = (s.id !== 'view-' + view));
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.view === view));
   setCatalogueTheme(view === 'producten');
+  if (view !== 'producten'){
+    const search = document.getElementById('site-search');
+    if (search && search.value){ search.value = ''; renderGrid(); resetGridSub(); }
+  }
   window.scrollTo({ top:0, behavior:'smooth' });
 }
 document.querySelectorAll('[data-view]').forEach(el =>
   el.addEventListener('click', () => showView(el.dataset.view)));
+
+/* ---- zoeken: filtert 'All Products' op naam of categorie ---- */
+const gridSubDefault = document.getElementById('grid-sub')?.textContent;
+function resetGridSub(){
+  const sub = document.getElementById('grid-sub');
+  if (sub) sub.textContent = gridSubDefault;
+}
+(function(){
+  const search = document.getElementById('site-search');
+  if (!search) return;
+  search.addEventListener('input', () => {
+    const q = search.value.trim().toLowerCase();
+    const sub = document.getElementById('grid-sub');
+    if (!q){ renderGrid(); resetGridSub(); return; }
+    if (document.getElementById('view-producten').hidden) showView('producten');
+    const matches = ALL_PRODUCTS.filter(p =>
+      p.naam.toLowerCase().includes(q) || p.categorie.toLowerCase().includes(q));
+    renderGrid(matches);
+    if (sub) sub.textContent = matches.length
+      ? `${matches.length} result${matches.length === 1 ? '' : 's'} for "${search.value.trim()}".`
+      : `No pieces match "${search.value.trim()}".`;
+  });
+  search.addEventListener('keydown', e => {
+    if (e.key === 'Escape'){ search.value = ''; search.blur(); renderGrid(); resetGridSub(); }
+  });
+})();
 
 /* ---- spotlight: open product panel ---- */
 document.querySelectorAll('[data-open]').forEach(el =>

@@ -233,11 +233,24 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .foot-icon svg{width:17px;height:17px}
 .foot-icon:hover{color:var(--bone)}
 
-/* ---- sfeerbeelden: producten in de kamer ---- */
+/* ---- sfeerbeelden: strook van foto's, links naar rechts ---- */
 .ambience{margin:26px 0 6px}
-.ambience-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.ambience-grid img{width:100%;height:340px;object-fit:cover;border-radius:16px;border:1px solid var(--line);display:block}
-@media(max-width:640px){.ambience-grid{grid-template-columns:1fr}.ambience-grid img{height:260px}}
+.ambience-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.ambience-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:1px solid var(--line);display:block}
+@media(max-width:640px){
+  .ambience-grid{display:flex;overflow-x:auto;gap:8px;padding-bottom:4px;scroll-snap-type:x proximity}
+  .ambience-grid img{flex:0 0 128px;width:128px;height:128px;scroll-snap-align:start}
+}
+
+/* ---- zoekbalk (vervangt 'About us' in de navigatie) ---- */
+.search-box{position:relative;display:flex;align-items:center}
+.search-icon{position:absolute;left:12px;width:13px;height:13px;color:var(--bone-dim);pointer-events:none}
+.search-input{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.06em;
+  background:transparent;border:1px solid var(--line);color:var(--bone);border-radius:999px;
+  padding:11px 14px 11px 32px;width:128px;transition:.18s}
+.search-input::placeholder{color:var(--bone-dim);text-transform:uppercase;letter-spacing:.1em;font-size:11px}
+.search-input:focus{outline:none;border-color:var(--taupe);width:170px}
+@media(max-width:480px){.search-input{width:100px;padding:8px 10px 8px 26px;font-size:11px}.search-input:focus{width:130px}.search-icon{left:10px}}
 
 /* ---- spotlight ---- */
 .spotlight{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:40px 0 10px;
