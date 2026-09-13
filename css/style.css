@@ -39,7 +39,7 @@ a{color:inherit}
 .sub.full{max-width:none}
 .sub.wide{max-width:62ch}
 
-.stage-shell{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+.stage-shell{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);max-width:900px;margin:0 auto}
 .stage{position:relative;width:100%;display:block;line-height:0}
 .stage-bg{position:relative;width:100%;height:auto;display:block}
 
