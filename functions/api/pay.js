@@ -4,15 +4,15 @@
 // variables, then REDEPLOY. Prices/shipping are server-side (anti-tamper).
 
 const PRODUCTS = {
-  kapstok:  { value: 480,  ship: "L", name: "Space-age coat stand in cream" },
+  kapstok:  { value: 480,  ship: "L", name: "Space age coat stand in cream" },
   buste:    { value: 1250, ship: "M", name: "Bronze bust of David" },
-  trolley:  { value: 650,  ship: "L", name: "Boby trolley — Joe Colombo" },
+  trolley:  { value: 248,  ship: "L", name: "Boby trolley — Joe Colombo" },
   spiegel:  { value: 2200, ship: "L", name: "Gilded floor mirror, oval" },
   fauteuil: { value: 1650, ship: "L", name: "Black & white swivel chair" },
   tafel:    { value: 1900, ship: "L", name: "Wooden coffee table" },
-  rolkast:  { value: 1450, ship: "L", name: "Op-art rolling cabinet" },
+  rolkast:  { value: 1450, ship: "L", name: "Op art rolling cabinet" },
   mc_lounge:{ value: 1250, ship: "L", name: "Orange & yellow swivel lounge chair" },
-  mc_bar:   { value: 1450, ship: "L", name: "Chrome & smoked-glass bar cart" },
+  mc_bar:   { value: 1450, ship: "L", name: "Chrome & smoked glass bar cart" },
   mc_green: { value: 680,  ship: "M", name: "Green leather office chair" }
 };
 const SHIP = {
