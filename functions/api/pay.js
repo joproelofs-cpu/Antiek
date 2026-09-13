@@ -5,7 +5,7 @@
 
 const PRODUCTS = {
   kapstok:  { value: 480,  ship: "L", name: "Space age coat stand in cream" },
-  buste:    { value: 1250, ship: "M", name: "Bronze bust of David" },
+  buste:    { value: 95,   ship: "M", name: "Bronze bust of David" },
   trolley:  { value: 248,  ship: "L", name: "Boby trolley · Joe Colombo" },
   spiegel:  { value: 2200, ship: "L", name: "Gilded floor mirror, oval" },
   fauteuil: { value: 1650, ship: "L", name: "Black & white swivel chair" },
