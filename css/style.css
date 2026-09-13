@@ -233,6 +233,12 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .foot-icon svg{width:17px;height:17px}
 .foot-icon:hover{color:var(--bone)}
 
+/* ---- sfeerbeelden: producten in de kamer ---- */
+.ambience{margin:26px 0 6px}
+.ambience-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ambience-grid img{width:100%;height:340px;object-fit:cover;border-radius:16px;border:1px solid var(--line);display:block}
+@media(max-width:640px){.ambience-grid{grid-template-columns:1fr}.ambience-grid img{height:260px}}
+
 /* ---- spotlight ---- */
 .spotlight{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:40px 0 10px;
   background:var(--ox);border:1px solid var(--line);border-radius:16px;overflow:hidden}
