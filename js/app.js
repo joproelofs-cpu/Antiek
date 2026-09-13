@@ -1,10 +1,11 @@
 /* Rendert de kamers (foto + klikpunten), de doorgangen tussen kamers,
    het productpaneel en het overzicht 'Alle producten'.
-   Inhoud staat in products.js — dit bestand hoef je niet te bewerken. */
+   Inhoud staat in products.js, dit bestand hoef je niet te bewerken. */
 
 const TIER_LABEL = { A:"Entry piece", B:"Mid-range", C:"Signature piece" };
 const COLLECTION = (window.CR_COLLECTION === 'midcentury') ? 'midcentury' : 'antique';
 const PRODUCTS = CATALOG.filter(p => p.collection === COLLECTION);
+const ALL_PRODUCTS = CATALOG;
 const ROOMS = (COLLECTION === 'midcentury') ? ROOMS_MC : ROOMS_ANTIQUE;
 const productUrl = id => 'product.html?id=' + encodeURIComponent(id);
 const byId   = id => PRODUCTS.find(p => p.id === id);
@@ -55,7 +56,7 @@ function renderRoom(){
 /* ---- overzicht: alle producten ---- */
 function renderGrid(){
   const grid = document.getElementById('grid');
-  grid.innerHTML = PRODUCTS.map(p => `
+  grid.innerHTML = ALL_PRODUCTS.map(p => `
     <article class="card" tabindex="0" role="button" aria-label="${p.naam}" data-id="${p.id}">
       <div class="card-img"><img src="${p.foto}" alt="${p.naam}" loading="lazy"></div>
       <div class="card-b">
@@ -96,9 +97,23 @@ scrim.addEventListener('click', closePanel);
 document.addEventListener('keydown', e => { if(e.key==='Escape') closePanel(); });
 
 /* ---- tabs: Showroom / Alle producten / Contact ---- */
+function setCatalogueTheme(on){
+  let link = document.querySelector('link[href="css/mc.css"]');
+  if (on){
+    if (!link){
+      link = document.createElement('link');
+      link.rel = 'stylesheet'; link.href = 'css/mc.css';
+      link.dataset.injected = 'true';
+      document.head.appendChild(link);
+    }
+  } else if (link && link.dataset.injected){
+    link.remove();
+  }
+}
 function showView(view){
   document.querySelectorAll('section[id^="view-"]').forEach(s => s.hidden = (s.id !== 'view-' + view));
   document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.view === view));
+  setCatalogueTheme(view === 'producten');
   window.scrollTo({ top:0, behavior:'smooth' });
 }
 document.querySelectorAll('[data-view]').forEach(el =>

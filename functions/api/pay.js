@@ -1,4 +1,4 @@
-// Cloudflare PAGES Function — secure Mollie checkout (item + shipping).
+// Cloudflare PAGES Function: secure Mollie checkout (item + shipping).
 // Works only on a Cloudflare *Pages* deployment (…pages.dev), not on a plain
 // Worker. Set MOLLIE_API_KEY in: Pages project → Settings → Environment
 // variables, then REDEPLOY. Prices/shipping are server-side (anti-tamper).
@@ -6,7 +6,7 @@
 const PRODUCTS = {
   kapstok:  { value: 480,  ship: "L", name: "Space age coat stand in cream" },
   buste:    { value: 1250, ship: "M", name: "Bronze bust of David" },
-  trolley:  { value: 248,  ship: "L", name: "Boby trolley — Joe Colombo" },
+  trolley:  { value: 248,  ship: "L", name: "Boby trolley · Joe Colombo" },
   spiegel:  { value: 2200, ship: "L", name: "Gilded floor mirror, oval" },
   fauteuil: { value: 1650, ship: "L", name: "Black & white swivel chair" },
   tafel:    { value: 1900, ship: "L", name: "Wooden coffee table" },
@@ -57,7 +57,7 @@ export async function onRequestGet(context) {
       headers: { "Authorization": "Bearer " + key, "Content-Type": "application/json" },
       body: JSON.stringify({
         amount: { currency: "EUR", value: total },
-        description: "Collector's Room — " + product.name + " (incl. shipping " + zone + ")",
+        description: "Collector's Room · " + product.name + " (incl. shipping " + zone + ")",
         redirectUrl: url.origin + "/?paid=" + encodeURIComponent(id),
         metadata: { productId: id, zone: zone, shipping: shipping }
       })
@@ -71,7 +71,7 @@ export async function onRequestGet(context) {
   if (checkout) return Response.redirect(checkout, 302);
 
   const detail = (data && (data.detail || data.title))
-    ? ((data.title ? data.title + " — " : "") + (data.detail || ""))
+    ? ((data.title ? data.title + ": " : "") + (data.detail || ""))
     : JSON.stringify(data);
   return page("Mollie couldn’t start the payment",
     "Mollie said: <b>" + detail + "</b><br><br>This usually means the API key is wrong or has an extra space, " +

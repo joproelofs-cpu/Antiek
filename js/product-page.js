@@ -21,7 +21,7 @@
     l.rel = 'stylesheet'; l.href = 'css/mc.css';
     document.head.appendChild(l);
   }
-  document.title = "Collector's Room — " + p.naam;
+  document.title = "Collector's Room · " + p.naam;
 
   const price = parseFloat(String(p.prijs).replace(/[^0-9.]/g,'').replace(/\.(?=\d{3})/g,''));
   const zoneOpts = SHIP_ZONES.map(z => `<option value="${z.id}">${z.label}</option>`).join('');
@@ -40,7 +40,7 @@
       <div class="price">${p.prijs} <small>${p.prijsNoot || ''}</small></div>
 
       <div class="ship-calc">
-        <label class="ship-label" for="zone">Estimate shipping — where to?</label>
+        <label class="ship-label" for="zone">Estimate shipping: where to?</label>
         <select id="zone" class="ship-select">${zoneOpts}</select>
         <div class="ship-lines">
           <div><span>Item</span><span id="s-item"></span></div>
