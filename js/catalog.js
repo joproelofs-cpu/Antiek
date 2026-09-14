@@ -99,10 +99,10 @@ const ROOMS_ANTIQUE = [
   ]}
 ];
 const ROOMS_MC = [
-  { id:"mc-room", naam:"The mid century room", foto:"images/mc-room.jpg", hotspots:[
-    { type:"product", id:"mc_lounge", x:22, y:58 },
-    { type:"product", id:"mc_bar",    x:48, y:70 },
-    { type:"product", id:"mc_green",  x:66, y:72 }
+  { id:"mc-room", naam:"The mid century room", foto:"images/mc-room-2.jpg", hotspots:[
+    { type:"product", id:"mc_lounge", x:22, y:51 },
+    { type:"product", id:"mc_bar",    x:48, y:65 },
+    { type:"product", id:"mc_green",  x:66, y:67 }
   ]}
 ];
 
