@@ -18,7 +18,7 @@
   document.getElementById('all-link').href = mc ? 'midcentury.html?view=producten' : 'index.html?view=producten';
   if (mc){
     const l = document.createElement('link');
-    l.rel = 'stylesheet'; l.href = 'css/mc.css?v=13';
+    l.rel = 'stylesheet'; l.href = 'css/mc.css?v=14';
     document.head.appendChild(l);
   }
   document.title = "Collector's Room · " + p.naam;
