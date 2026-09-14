@@ -241,7 +241,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 
 /* ---- sfeerbeelden: strook van foto's, links naar rechts ---- */
 .ambience{margin:26px 0 6px}
-.ambience-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.ambience-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-radius:14px;overflow:hidden}
 .ambience-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:0;display:block}
 @media(max-width:640px){
   .ambience-grid{display:flex;overflow-x:auto;gap:0;padding-bottom:4px;scroll-snap-type:x proximity}
