@@ -30,7 +30,10 @@ a{color:inherit}
 .tab:hover{color:var(--bone)}
 .tab.active{background:var(--taupe);color:var(--ink)}
 @media(max-width:480px){
-  .tab{padding:8px 11px;font-size:11px;letter-spacing:.06em}
+  .topnav{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start}
+  .tab{padding:6px 9px;font-size:10.5px;letter-spacing:.04em}
+  .nav-left,.nav-right{flex:none}
+  .nav-right{margin-left:auto}
 }
 
 /* logo: compact en gecentreerd, strak boven de foto */
@@ -259,7 +262,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
   padding:11px 14px 11px 32px;width:128px;transition:.18s}
 .search-input::placeholder{color:var(--bone-dim);text-transform:uppercase;letter-spacing:.1em;font-size:11px}
 .search-input:focus{outline:none;border-color:var(--taupe);width:170px}
-@media(max-width:480px){.search-input{width:100px;padding:8px 10px 8px 26px;font-size:11px}.search-input:focus{width:130px}.search-icon{left:10px}}
+@media(max-width:480px){.search-input{width:72px;padding:6px 8px 6px 24px;font-size:10.5px}.search-input:focus{width:110px}.search-icon{left:8px}}
 
 /* ---- spotlight ---- */
 .spotlight{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:40px 0 10px;
