@@ -46,7 +46,7 @@ a{color:inherit}
 .stage{position:relative;width:100%;display:block;line-height:0}
 .stage-bg{position:relative;width:100%;height:auto;display:block}
 .stage-caption{text-align:center;margin:22px 0 28px}
-.stage-caption-text{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:19px;color:var(--bone-dim);margin:0 0 12px}
+.stage-caption-text{font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:26px;color:var(--bone-dim);margin:0 0 12px}
 .stage-caption-rule{display:block;width:64px;height:1px;background:var(--taupe);margin:0 auto}
 
 .hs{position:absolute;transform:translate(-50%,-50%);border:none;background:none;cursor:pointer;padding:0;z-index:3}

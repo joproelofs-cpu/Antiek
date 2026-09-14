@@ -106,7 +106,7 @@ function setCatalogueTheme(on){
   if (on){
     if (!link){
       link = document.createElement('link');
-      link.rel = 'stylesheet'; link.href = 'css/mc.css?v=10';
+      link.rel = 'stylesheet'; link.href = 'css/mc.css?v=11';
       link.dataset.injected = 'true';
       document.head.appendChild(link);
     }
