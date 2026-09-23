@@ -2,3 +2,6 @@
 .DS_Store
 Thumbs.db
 *.log
+
+# Impeccable-engine (binair, machine-specifiek; komt terug via `npx impeccable install`)
+.claude/skills/impeccable/scripts/
