@@ -5,13 +5,13 @@
 
 const PRODUCTS = {
   kapstok:  { value: 480,  ship: "L", name: "Space age coat stand in cream" },
-  buste:    { value: 95,   ship: "M", name: "Bronze bust of David" },
+  buste:    { value: 95,   ship: "M", name: "Bronze bust of David", sold: true },
   trolley:  { value: 248,  ship: "L", name: "Boby trolley · Joe Colombo" },
   spiegel:  { value: 2200, ship: "L", name: "Gilded floor mirror, oval" },
   fauteuil: { value: 1650, ship: "L", name: "Black & white swivel chair" },
   tafel:    { value: 1900, ship: "L", name: "Wooden coffee table" },
   rolkast:  { value: 1450, ship: "L", name: "Op art rolling cabinet" },
-  mc_lounge:{ value: 850,  ship: "L", name: "Orange & yellow swivel lounge chair" },
+  mc_lounge:{ value: 850,  ship: "L", name: "Orange & yellow swivel lounge chair", sold: true },
   mc_bar:   { value: 1450, ship: "L", name: "Chrome & smoked glass bar cart" },
   mc_green: { value: 680,  ship: "M", name: "Green leather office chair" }
 };
@@ -38,6 +38,7 @@ export async function onRequestGet(context) {
   const product = PRODUCTS[id];
 
   if (!product) return page("Unknown product", "This product could not be found. Please go back and try again.");
+  if (product.sold) return page("This piece has sold", "That's no longer available. Get in touch and we'll let you know about similar pieces.");
 
   const key = (env.MOLLIE_API_KEY || "").trim();
   if (!key) {

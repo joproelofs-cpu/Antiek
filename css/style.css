@@ -5,6 +5,7 @@
   --taupe:#B2A488;       /* accent + knoppen */
   --taupe-d:#9A8C70;
   --brass:#C39B52;       /* subtiele haarlijn */
+  --brass-lite:#C39B52;  /* accent: spotlight-prijs, signatuur */
   --bone:#F2E7D2;        /* tekst */
   --bone-dim:#CBB99A;    /* gedempte tekst */
   --moss:#7B8438;
@@ -15,6 +16,8 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0}
+::selection{background:var(--taupe);color:var(--ink)}
+:focus-visible{outline:2px solid var(--taupe);outline-offset:2px}
 body{background:var(--ox-deep);color:var(--bone);overflow-x:hidden;
   font-family:'Archivo',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.55}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.045;
@@ -121,6 +124,7 @@ a{color:inherit}
 .badge.A{background:var(--moss);color:var(--ink);border-color:var(--moss)}
 .badge.B{background:transparent;color:var(--taupe);border-color:var(--taupe)}
 .badge.C{background:var(--taupe);color:var(--ink);border-color:var(--taupe)}
+.badge.sold{background:var(--ink);color:var(--bone-dim);border-color:var(--line);margin-left:6px}
 .eyebrow{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe);margin:0 0 4px}
 .pname{font-family:'Fraunces',serif;font-weight:700;font-size:28px;line-height:1.06;margin:0 0 16px}
 .spec{border-top:1px solid var(--line);padding:9px 0;display:flex;justify-content:space-between;gap:14px;font-size:13.5px}

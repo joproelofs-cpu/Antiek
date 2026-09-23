@@ -18,7 +18,7 @@
   document.getElementById('all-link').href = mc ? 'midcentury.html?view=producten' : 'index.html?view=producten';
   if (mc){
     const l = document.createElement('link');
-    l.rel = 'stylesheet'; l.href = 'css/mc.css?v=14';
+    l.rel = 'stylesheet'; l.href = 'css/mc.css?v=15';
     document.head.appendChild(l);
   }
   document.title = "Collector's Room · " + p.naam;
@@ -32,13 +32,18 @@
   pdp.innerHTML = `
     <div class="pdp-media"><img src="${p.foto}" alt="${p.naam}"></div>
     <div class="pdp-info">
-      <span class="badge ${p.laag}">${TIER[p.laag]}</span>
+      <span class="badge ${p.laag}">${TIER[p.laag]}</span>${p.sold ? ' <span class="badge sold">Sold</span>' : ''}
       <p class="eyebrow">${p.categorie}</p>
       <h1 class="pname">${p.naam}</h1>
       <dl>${p.specs.map(([k,v]) => `<div class="spec"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
       <p class="story">${p.verhaal}</p>
       <div class="price">${p.prijs} <small>${p.prijsNoot || ''}</small></div>
 
+      ${p.sold ? `
+      <p class="note" style="margin-top:0">This piece has sold. Interested in something similar? Get in touch.</p>
+      <div class="cta">
+        <a class="ghost" href="${askHref}">Ask about similar pieces</a>
+      </div>` : `
       <div class="ship-calc">
         <label class="ship-label" for="zone">Estimate shipping: where to?</label>
         <select id="zone" class="ship-select">${zoneOpts}</select>
@@ -53,19 +58,21 @@
         <a class="primary" id="buy" href="#">Buy now</a>
         <a class="ghost" href="${askHref}">Ask a question</a>
       </div>
-      <p class="note">Shipping shown is an estimate. For large pieces we can also arrange a tailored quote or local pickup in Koningsbosch. Prices are indicative.</p>
+      <p class="note">Shipping shown is an estimate. For large pieces we can also arrange a tailored quote or local pickup in Koningsbosch. Prices are indicative.</p>`}
     </div>`;
 
-  const fmt = n => '\u20ac' + Number(n).toLocaleString('nl-NL');
-  const zoneSel = document.getElementById('zone');
-  function update(){
-    const zone = zoneSel.value;
-    const ship = shipCost(p.id, zone);
-    document.getElementById('s-item').textContent  = fmt(price);
-    document.getElementById('s-ship').textContent  = fmt(ship);
-    document.getElementById('s-total').textContent = fmt(price + ship);
-    document.getElementById('buy').href = '/api/pay?id=' + encodeURIComponent(p.id) + '&zone=' + zone;
+  if (!p.sold){
+    const fmt = n => '\u20ac' + Number(n).toLocaleString('nl-NL');
+    const zoneSel = document.getElementById('zone');
+    function update(){
+      const zone = zoneSel.value;
+      const ship = shipCost(p.id, zone);
+      document.getElementById('s-item').textContent  = fmt(price);
+      document.getElementById('s-ship').textContent  = fmt(ship);
+      document.getElementById('s-total').textContent = fmt(price + ship);
+      document.getElementById('buy').href = '/api/pay?id=' + encodeURIComponent(p.id) + '&zone=' + zone;
+    }
+    zoneSel.addEventListener('change', update);
+    update();
   }
-  zoneSel.addEventListener('change', update);
-  update();
 })();
