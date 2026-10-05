@@ -99,6 +99,9 @@ a{color:inherit}
   font-family:'Spline Sans Mono',monospace;font-weight:600;font-size:22px;letter-spacing:.28em;text-transform:uppercase;
   color:#fff;padding:6px 22px;border:2px solid #fff;border-radius:6px;transition:opacity .25s;pointer-events:none}
 .card.sold:hover .sold-tint,.card.sold:hover .sold-stamp{opacity:0}
+.whoppah-badge{position:absolute;top:10px;left:10px;font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;background:rgba(13,6,4,.75);color:var(--bone);border:1px solid var(--line);padding:5px 10px;
+  border-radius:999px;backdrop-filter:blur(2px)}
 .card-b{padding:14px 15px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
 .card-cat{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--taupe)}
 .card-name{font-family:'Fraunces',serif;font-weight:600;font-size:17px;line-height:1.15}

@@ -62,6 +62,7 @@ function renderGrid(list){
       <div class="card-img">
         <img src="${p.foto}" alt="${p.naam}" loading="lazy">
         ${p.sold ? '<span class="sold-tint"></span><span class="sold-stamp">Sold</span>' : ''}
+        ${p.whoppah ? '<span class="whoppah-badge">Via Whoppah</span>' : ''}
       </div>
       <div class="card-b">
         <span class="card-cat">${p.categorie}</span>
@@ -91,7 +92,8 @@ function openPanel(id){
   document.getElementById('story').textContent = p.verhaal;
   document.getElementById('price').innerHTML = p.prijs + (p.prijsNoot ? ` <small>${p.prijsNoot}</small>` : '');
   const cta = document.getElementById('cta');
-  cta.innerHTML = `<a class="primary" href="${productUrl(p.id)}">View &amp; buy \u2192</a>`
+  const viewLabel = p.sold ? 'View details' : (p.whoppah ? 'View on Whoppah' : 'View & buy');
+  cta.innerHTML = `<a class="primary" href="${productUrl(p.id)}">${viewLabel} \u2192</a>`
                 + `<a class="ghost" href="${inquiryHref(p)}">Ask a question</a>`;
   panel.classList.add('open'); scrim.classList.add('open');
 }
@@ -106,7 +108,7 @@ function setCatalogueTheme(on){
   if (on){
     if (!link){
       link = document.createElement('link');
-      link.rel = 'stylesheet'; link.href = 'css/mc.css?v=15';
+      link.rel = 'stylesheet'; link.href = 'css/mc.css?v=16';
       link.dataset.injected = 'true';
       document.head.appendChild(link);
     }

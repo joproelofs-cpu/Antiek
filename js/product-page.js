@@ -18,7 +18,7 @@
   document.getElementById('all-link').href = mc ? 'midcentury.html?view=producten' : 'index.html?view=producten';
   if (mc){
     const l = document.createElement('link');
-    l.rel = 'stylesheet'; l.href = 'css/mc.css?v=15';
+    l.rel = 'stylesheet'; l.href = 'css/mc.css?v=16';
     document.head.appendChild(l);
   }
   document.title = "Collector's Room · " + p.naam;
@@ -43,6 +43,11 @@
       <p class="note" style="margin-top:0">This piece has sold. Interested in something similar? Get in touch.</p>
       <div class="cta">
         <a class="ghost" href="${askHref}">Ask about similar pieces</a>
+      </div>` : p.whoppah ? `
+      <p class="note" style="margin-top:0">This piece is listed and sold via Whoppah, not through our own checkout. "Buy on Whoppah" takes you to the listing to purchase and arrange delivery there.</p>
+      <div class="cta">
+        <a class="primary" href="${p.whoppah}" target="_blank" rel="noopener">Buy on Whoppah &rarr;</a>
+        <a class="ghost" href="${askHref}">Ask a question</a>
       </div>` : `
       <div class="ship-calc">
         <label class="ship-label" for="zone">Estimate shipping: where to?</label>
@@ -61,7 +66,7 @@
       <p class="note">Shipping shown is an estimate. For large pieces we can also arrange a tailored quote or local pickup in Koningsbosch. Prices are indicative.</p>`}
     </div>`;
 
-  if (!p.sold){
+  if (!p.sold && !p.whoppah){
     const fmt = n => '\u20ac' + Number(n).toLocaleString('nl-NL');
     const zoneSel = document.getElementById('zone');
     function update(){
