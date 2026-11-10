@@ -331,53 +331,78 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
   color:var(--bone);text-decoration:none;padding:13px 16px;border-radius:8px;transition:.14s}
 .dd-item:hover{background:var(--taupe);color:var(--ink)}
 
-/* ---- product page (PDP): vintage furniture-journal layout ----
-   Reference: a 1980s magazine feature poster — a tracked-caps serif
-   masthead strip, a large elegant Didone headline, an italic serif
-   subtitle, and a plain fact sheet underneath. ---- */
-.pdp{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:28px 0 48px;align-items:start;
-  border-top:1px solid var(--bone);padding-top:18px}
-.pdp-gallery{display:flex;flex-direction:column;align-items:center;gap:10px}
-.pdp-media{position:relative;aspect-ratio:9/16;width:auto;max-width:100%;height:min(78vh,740px);
-  background:var(--studio);overflow:hidden;border:1px solid var(--line);border-radius:var(--blob-4)}
-.pdp-media img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.pdp-fig{align-self:flex-start;font-family:'Playfair Display',serif;font-style:italic;font-size:13px;
-  color:var(--bone-dim);margin:2px 0 0}
-.pdp-thumbs{display:flex;gap:8px;align-self:flex-start}
-.pdp-thumb{width:56px;height:56px;flex:none;padding:0;border:1px solid var(--line);border-radius:4px;
-  overflow:hidden;cursor:pointer;background:var(--studio);transition:outline-color .18s;outline:2px solid transparent;outline-offset:1px}
-.pdp-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.pdp-thumb:hover{outline-color:var(--taupe-d)}
-.pdp-thumb.active{outline-color:var(--taupe)}
-.pdp-info{padding-top:0}
-.pdp-masthead{display:flex;justify-content:space-between;align-items:center;gap:14px;
-  border-top:1px solid var(--bone);border-bottom:1px solid var(--bone);padding:9px 0;margin-bottom:22px;
-  font-family:'Playfair Display',serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--bone)}
-.pdp-masthead span:nth-child(2){color:var(--taupe)}
-.pdp-info .pname{font-family:'Playfair Display',serif;font-weight:900;letter-spacing:-.01em;
-  font-size:clamp(34px,4.6vw,54px);line-height:1.04;margin:0 0 8px;color:var(--bone)}
-.pdp-byline{font-family:'Playfair Display',serif;font-style:italic;font-weight:400;font-size:18px;
-  color:var(--bone-dim);margin:0 0 22px}
-.pdp-specsheet{border-top:1px solid var(--line);margin-top:4px}
+/* ---- product page (PDP): magazine-poster layout ----
+   Reference: a furniture-journal poster mockup supplied by the user —
+   title + price on one line, a full-width hero carousel, a big
+   tagline beside the description, a thumbnail strip, and a bottom
+   price + buy bar. ---- */
+.pdp{max-width:900px;margin:28px auto 60px}
+.pdp-titlebar{text-align:center;border-top:1px solid var(--bone);padding-top:18px}
+.pdp-titlerow{display:flex;align-items:baseline;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:8px}
+.pdp-titlerow .pname{font-family:'Playfair Display',serif;font-weight:900;letter-spacing:-.01em;
+  font-size:clamp(34px,5.4vw,58px);line-height:1.02;margin:0;color:var(--bone)}
+.pdp-titlediv{font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(26px,3.6vw,38px);color:var(--line)}
+.pdp-price-top{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+  font-size:clamp(26px,3.6vw,38px);color:var(--bone)}
+.pdp-subtitle{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--bone-dim);
+  margin:10px 0 0}
+.pdp-titlebar .badge{margin-bottom:10px}
+.pdp-titlebar{border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:28px}
+
+.pdp-hero{position:relative;aspect-ratio:16/10;border-radius:14px;overflow:hidden;
+  background:var(--studio);border:1px solid var(--line)}
+.pdp-hero img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.pdp-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;
+  border:none;background:rgba(255,255,255,.85);color:var(--ink);font-size:22px;line-height:1;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:.16s}
+.pdp-arrow:hover{background:#fff}
+.pdp-arrow.prev{left:16px}
+.pdp-arrow.next{right:16px}
+.pdp-dots{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:8px}
+.pdp-dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,.55);cursor:pointer;padding:0}
+.pdp-dot.active{background:#fff}
+
+.pdp-feature{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;
+  border-bottom:1px solid var(--line);margin:34px 0;padding-bottom:34px}
+.pdp-tagline{font-family:'Fraunces',serif;font-style:italic;font-weight:700;font-size:clamp(26px,3.6vw,38px);
+  line-height:1.08;margin:0;color:var(--bone)}
+.pdp-feature-right{border-left:1px solid var(--line);padding-left:36px}
+.pdp-feature-right .story{font-size:15px;line-height:1.65;color:var(--bone-dim);margin:0 0 20px}
+.pdp-specsheet{border-top:1px solid var(--line)}
 .pdp-specsheet .spec{border-top:none;border-bottom:1px solid var(--line);padding:11px 0;font-size:13.5px}
 .pdp-specsheet .spec dt{font-family:'Spline Sans Mono',monospace}
 .pdp-specsheet .spec dd{font-family:'Fraunces',serif;font-weight:500}
-.pdp-info .story{font-family:'Fraunces',serif;font-style:italic;font-size:15px;line-height:1.6;color:var(--bone-dim)}
-.pdp-info .price{font-family:'Playfair Display',serif;font-weight:700;font-size:30px;margin:10px 0 4px;
-  border-top:1px solid var(--bone);padding-top:14px;color:var(--bone)}
-@media(max-width:760px){.pdp{border-top:1px solid var(--bone);padding-top:18px}}
-.ship-calc{border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:22px 0}
+@media(max-width:700px){.pdp-feature{grid-template-columns:1fr}.pdp-feature-right{border-left:none;padding-left:0}}
+
+.pdp-thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:34px}
+.pdp-thumb{aspect-ratio:1/1;padding:0;border:none;border-radius:8px;overflow:hidden;cursor:pointer;
+  background:var(--studio);opacity:.55;transition:opacity .16s}
+.pdp-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.pdp-thumb:hover{opacity:.8}
+.pdp-thumb.active{opacity:1}
+@media(max-width:600px){.pdp-thumbs{grid-template-columns:repeat(3,1fr)}}
+
+.ship-calc{border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0 0 28px}
 .ship-label{display:block;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:10px}
 .ship-select{width:100%;font-family:'Archivo',sans-serif;font-size:15px;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:var(--ox-deep);color:var(--bone);cursor:pointer}
 .ship-lines{margin-top:16px;display:flex;flex-direction:column;gap:9px;font-size:14px;color:var(--bone-dim)}
 .ship-lines > div{display:flex;justify-content:space-between;gap:16px}
 .ship-total{border-top:1px solid var(--line);padding-top:11px;margin-top:2px;font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--bone)}
-.pdp .cta{margin-top:6px}
-.pdp .cta .primary,.pdp .cta .ghost{flex:1;min-width:150px;text-align:center;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;padding:15px 18px;border-radius:9px;border:1px solid var(--taupe);transition:.16s}
-.pdp .cta .primary{background:var(--taupe);color:var(--ink)}
-.pdp .cta .primary:hover{background:var(--taupe-d);border-color:var(--taupe-d)}
-.pdp .cta .ghost{background:transparent;color:var(--bone);border-color:var(--line)}
-.pdp .cta .ghost:hover{border-color:var(--taupe);color:var(--taupe)}
+
+.pdp-bottombar{display:flex;align-items:center;gap:16px;border-top:1px solid var(--bone);padding-top:24px}
+.pdp-price-bottom{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:30px;color:var(--bone);flex:none}
+.pdp-price-bottom small{font-family:'Archivo',sans-serif;font-style:normal;font-size:12px;color:var(--bone-dim);display:block}
+.pdp-buy{flex:1;text-align:center;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:600;
+  font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding:18px 20px;border-radius:10px;
+  background:var(--bone);color:var(--ox-deep);transition:.16s}
+.pdp-buy:hover{background:var(--taupe);color:var(--ink)}
+.pdp-buy.ghost-wide{background:transparent;border:1px solid var(--bone);color:var(--bone)}
+.pdp-buy.ghost-wide:hover{border-color:var(--taupe);color:var(--taupe);background:transparent}
+.pdp-ask{flex:none;width:58px;height:58px;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);border-radius:10px;color:var(--bone);text-decoration:none;font-size:20px;
+  font-family:'Fraunces',serif;transition:.16s}
+.pdp-ask:hover{border-color:var(--taupe);color:var(--taupe)}
+.pdp-note{margin-top:14px;text-align:center}
 @media(max-width:760px){.pdp{grid-template-columns:1fr;gap:22px}}
 
 /* ---- human touch: handgeschreven signatuur ---- */
