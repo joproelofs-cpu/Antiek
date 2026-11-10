@@ -37,10 +37,13 @@
       </div>` : ''}
     </div>
     <div class="pdp-info">
+      <div class="pdp-codebar">
+        <span class="pdp-code">${p.id.replace(/^mc_/, '').toUpperCase()}</span>
+        ${makerSpec ? `<span class="pdp-byline">${makerSpec[1]}</span>` : ''}
+      </div>
       <span class="badge ${p.laag}">${TIER[p.laag]}</span>${p.sold ? ' <span class="badge sold">Sold</span>' : ''}
       <p class="eyebrow">${p.categorie}</p>
       <h1 class="pname">${p.naam}</h1>
-      ${makerSpec ? `<p class="pdp-byline">${makerSpec[1]}</p>` : ''}
       <dl class="pdp-specsheet">${p.specs.filter(spec => spec !== makerSpec).map(([k,v]) => `<div class="spec"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
       <p class="story">${p.verhaal}</p>
       <div class="price">${p.prijs} <small>${p.prijsNoot || ''}</small></div>
