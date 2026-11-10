@@ -207,14 +207,15 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .foot-link{font:inherit;font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--taupe);background:none;border:none;padding:0;cursor:pointer}
 .foot-link:hover{color:var(--bone);text-decoration:underline}
 
-/* ---- showroom switcher: button above the stage photo ---- */
-.room-switch{display:flex;justify-content:center;margin:0 0 22px}
-.switch-btn{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-  text-decoration:none;padding:13px 28px;border-radius:999px;cursor:pointer;transition:.18s;box-shadow:0 8px 24px -10px rgba(0,0,0,.4)}
-.switch-to-antique{background:#3A1714;color:#F2E7D2}
-.switch-to-antique:hover{background:#260D0B;transform:translateY(-2px)}
-.switch-to-midcentury{background:#B23809;color:#FFF7EC}
-.switch-to-midcentury:hover{background:#8C2B06;transform:translateY(-2px)}
+/* ---- showroom switcher: text link above the stage photo ---- */
+.room-switch{display:flex;justify-content:flex-end;max-width:900px;margin:0 auto 12px}
+.switch-btn{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;gap:6px;transition:.18s}
+.switch-btn::after{content:"\2192"}
+.switch-to-antique{color:#3A1714}
+.switch-to-antique:hover{color:#160C09}
+.switch-to-midcentury{color:#E8863E}
+.switch-to-midcentury:hover{color:#F4B37D}
 
 /* ---- contact: centered + icon row ---- */
 .center{text-align:center}
