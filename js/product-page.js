@@ -16,11 +16,6 @@
   const showroom = mc ? 'index.html' : 'antique.html';
   document.getElementById('back-link').href = showroom;
   document.getElementById('all-link').href = mc ? 'index.html?view=producten' : 'antique.html?view=producten';
-  if (mc){
-    const l = document.createElement('link');
-    l.rel = 'stylesheet'; l.href = 'css/mc.css?v=16';
-    document.head.appendChild(l);
-  }
   document.title = "Collector's Room · " + p.naam;
 
   const price = parseFloat(String(p.prijs).replace(/[^0-9.]/g,'').replace(/\.(?=\d{3})/g,''));
