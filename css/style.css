@@ -339,7 +339,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
   border-top:2px solid var(--bone);padding-top:26px}
 .pdp-gallery{display:flex;flex-direction:column;align-items:center;gap:10px}
 .pdp-media{position:relative;aspect-ratio:9/16;width:auto;max-width:100%;height:min(78vh,740px);
-  background:var(--studio);overflow:hidden;border:1px solid var(--bone);border-radius:2px}
+  background:var(--studio);overflow:hidden;border:1px solid var(--line);border-radius:var(--blob-4)}
 .pdp-media img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .pdp-fig{align-self:flex-start;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.08em;
   text-transform:uppercase;color:var(--bone-dim);margin:2px 0 0}
