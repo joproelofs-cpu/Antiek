@@ -137,6 +137,12 @@ function resetGridSub(){
 (function(){
   const search = document.getElementById('site-search');
   if (!search) return;
+  const box = document.querySelector('.search-box');
+  const toggle = document.getElementById('search-toggle');
+  function openSearch(){ box.classList.add('open'); toggle.setAttribute('aria-expanded','true'); search.focus(); }
+  function closeSearch(){ if (search.value) return; box.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); }
+  toggle.addEventListener('click', () => { box.classList.contains('open') ? closeSearch() : openSearch(); });
+  search.addEventListener('blur', closeSearch);
   search.addEventListener('input', () => {
     const q = search.value.trim().toLowerCase();
     const sub = document.getElementById('grid-sub');
