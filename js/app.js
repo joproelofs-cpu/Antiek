@@ -58,9 +58,10 @@ function renderGrid(list){
   const products = list || ALL_PRODUCTS;
   const grid = document.getElementById('grid');
   grid.innerHTML = products.map(p => `
-    <article class="card${p.sold ? ' sold' : ''}${p.showFull ? ' show-full' : ''}" tabindex="0" role="button" aria-label="${p.naam}" data-id="${p.id}">
+    <article class="card${p.sold ? ' sold' : ''}" tabindex="0" role="button" aria-label="${p.naam}" data-id="${p.id}">
       <div class="card-img">
-        <img src="${p.foto}" alt="${p.naam}" loading="lazy">
+        <img class="img-bg" src="${p.foto}" alt="" aria-hidden="true" loading="lazy">
+        <img class="img-fg" src="${p.foto}" alt="${p.naam}" loading="lazy">
         ${p.sold ? '<span class="sold-tint"></span><span class="sold-stamp">Sold</span>' : ''}
       </div>
       <div class="card-b">
@@ -80,6 +81,7 @@ function renderGrid(list){
 const panel = document.getElementById('panel'), scrim = document.getElementById('scrim');
 function openPanel(id){
   const p = byId(id); if(!p) return;
+  document.getElementById('pimg-bg').src = p.foto;
   document.getElementById('pimg').src = p.foto;
   document.getElementById('pimg').alt = p.naam;
   const badge = document.getElementById('badge');

@@ -30,7 +30,7 @@ const SHIP_RATES = {
 };
 
 const CATALOG = [
-  { id:"kapstok", collection:"antique", ship:"L", showFull:true,
+  { id:"kapstok", collection:"antique", ship:"L",
     naam:"Space age coat stand in cream", categorie:"Coat stand \u00b7 sculptural", laag:"B",
     prijs:"\u20ac480", prijsNoot:"indicative", foto:"images/kapstok.jpg",
     specs:[["Period","1970s"],["Style","Italian space age"],["Material","cream plastic"],["Condition","good vintage condition"]],
@@ -40,13 +40,13 @@ const CATALOG = [
     prijs:"\u20ac95", prijsNoot:"indicative", foto:"images/buste.jpg",
     specs:[["Subject","David, after Michelangelo"],["Material","bronze & copper"],["Base","gilded"],["Condition","warm, lived in patina"]],
     verhaal:"No plaster, no copy of a copy. Solid bronze with a patina that took years, on a gilded base. Put it on a plinth and the room bends toward it." },
-  { id:"trolley", collection:"antique", ship:"L", showFull:true,
+  { id:"trolley", collection:"antique", ship:"L",
     naam:"Boby trolley \u00b7 Joe Colombo", categorie:"Icons \u00b7 design classic", laag:"C",
     prijs:"\u20ac285", prijsNoot:"via Whoppah", foto:"images/trolley-full.jpg",
     whoppah:"https://www.whoppah.com/products/vintage-boby-trolley-joe-colombo-08D326K7GA52",
     specs:[["Designer","Joe Colombo"],["Maker","Bieffeplast"],["Material","black plastic"],["Condition","very good, light signs of use"],["Dimensions","72 \u00d7 43 \u00d7 42 cm"]],
     verhaal:"The icon collectors search for by name. Joe Colombo's Boby: swivelling drawers, rolls wherever you want, designed when the future was still made of plastic. In very good vintage condition with light signs of use; the loose plastic insert is included, so the trolley is fully complete." },
-  { id:"spiegel", collection:"antique", ship:"L", showFull:true,
+  { id:"spiegel", collection:"antique", ship:"L",
     naam:"Gilded floor mirror, oval", categorie:"Mirrors \u00b7 statement", laag:"C",
     prijs:"\u20ac2.200", prijsNoot:"indicative", foto:"images/spiegel.jpg",
     specs:[["Shape","oval, tilting"],["Frame","gilded floral relief"],["Detail","draped swag"],["Type","cheval / full length"]],
