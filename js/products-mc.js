@@ -1,4 +1,4 @@
-/* Mid Century collection — products & room for midcentury.html */
+/* Mid Century collection — products & room for index.html */
 
 const CONTACT = {
   email:    "zakelijk.roelofs@gmail.com",

@@ -176,22 +176,6 @@ document.querySelectorAll('[data-tiktok]').forEach(el => { if (CONTACT.tiktok) e
 renderRoom();
 renderGrid();
 
-/* ---- welcome: Antique / Mid Century / All Products ---- */
-(function(){
-  const intro = document.getElementById('intro');
-  if (!intro) return;
-  function enter(view){
-    if (view) showView(view);
-    intro.classList.add('gone');
-    setTimeout(() => { intro.style.display = 'none'; }, 650);
-  }
-  document.getElementById('go-antique')?.addEventListener('click', () => enter('showroom'));
-  document.getElementById('go-allproducts')?.addEventListener('click', () => enter('producten'));
-  document.getElementById('go-midcentury')?.addEventListener('click', () => {
-    window.location.href = 'midcentury.html';
-  });
-})();
-
 /* ---- betaal-bevestiging na terugkeer van Mollie ---- */
 (function(){
   const params = new URLSearchParams(location.search);
@@ -218,16 +202,12 @@ renderGrid();
     });
     document.addEventListener('click', () => dd.classList.remove('open'));
   }
-  const current = location.pathname.indexOf('midcentury') !== -1 ? 'midcentury' : 'antique';
+  const current = location.pathname.indexOf('antique') !== -1 ? 'antique' : 'midcentury';
   document.querySelectorAll('.dd-item').forEach(a => {
     a.addEventListener('click', (e) => {
       if (a.dataset.world === current){ e.preventDefault(); showView('showroom'); dd && dd.classList.remove('open'); }
     });
   });
   const params = new URLSearchParams(location.search);
-  if (params.has('enter') || params.has('view')){
-    const intro = document.getElementById('intro');
-    if (intro) intro.style.display = 'none';
-    showView(params.get('view') || 'showroom');
-  }
+  if (params.has('view')) showView(params.get('view'));
 })();

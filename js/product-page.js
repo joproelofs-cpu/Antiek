@@ -7,15 +7,15 @@
   const pdp = document.getElementById('pdp');
 
   if (!p){
-    pdp.innerHTML = '<p class="sub" style="margin:40px 0">Sorry, this piece could not be found. <a class="link-btn" href="index.html?enter=1">Back to the showroom &rarr;</a></p>';
+    pdp.innerHTML = '<p class="sub" style="margin:40px 0">Sorry, this piece could not be found. <a class="link-btn" href="index.html">Back to the showroom &rarr;</a></p>';
     return;
   }
 
   // theme + navigation depend on the collection
   const mc = (p.collection === 'midcentury');
-  const showroom = mc ? 'midcentury.html' : 'index.html?enter=1';
+  const showroom = mc ? 'index.html' : 'antique.html';
   document.getElementById('back-link').href = showroom;
-  document.getElementById('all-link').href = mc ? 'midcentury.html?view=producten' : 'index.html?view=producten';
+  document.getElementById('all-link').href = mc ? 'index.html?view=producten' : 'antique.html?view=producten';
   if (mc){
     const l = document.createElement('link');
     l.rel = 'stylesheet'; l.href = 'css/mc.css?v=16';

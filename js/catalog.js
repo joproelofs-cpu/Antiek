@@ -1,6 +1,6 @@
 /* =========================================================================
    CENTRAL CATALOG: single source of truth for every product & room.
-   Used by index.html (antique), midcentury.html (mid century) and
+   Used by index.html (mid century), antique.html (antique) and
    product.html (single product page). Edit prices/products HERE.
    NOTE: for security the prices are ALSO in functions/api/pay.js (server
    side). If you change a price or shipping rate, update it there too.
