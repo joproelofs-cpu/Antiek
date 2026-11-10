@@ -30,7 +30,7 @@
                   '&body=' + encodeURIComponent(askBody);
 
   pdp.innerHTML = `
-    <div class="pdp-media"><img class="img-bg" src="${p.foto}" alt="" aria-hidden="true"><img class="img-fg" src="${p.foto}" alt="${p.naam}"></div>
+    <div class="pdp-media"><img src="${p.foto}" alt="${p.naam}"></div>
     <div class="pdp-info">
       <span class="badge ${p.laag}">${TIER[p.laag]}</span>${p.sold ? ' <span class="badge sold">Sold</span>' : ''}
       <p class="eyebrow">${p.categorie}</p>
