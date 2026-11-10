@@ -7,7 +7,6 @@ const PRODUCTS = {
   kapstok:  { value: 480,  ship: "L", name: "Space age coat stand in cream" },
   buste:    { value: 95,   ship: "M", name: "Bronze bust of David", sold: true },
   spiegel:  { value: 2200, ship: "L", name: "Gilded floor mirror, oval" },
-  fauteuil: { value: 1650, ship: "L", name: "Black & white swivel chair" },
   tafel:    { value: 1900, ship: "L", name: "Wooden coffee table" },
   rolkast:  { value: 1450, ship: "L", name: "Op art rolling cabinet" },
   mc_lounge:{ value: 850,  ship: "L", name: "Orange & yellow swivel lounge chair", sold: true },
