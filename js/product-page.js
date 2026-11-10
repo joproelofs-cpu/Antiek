@@ -25,10 +25,12 @@
                   '&body=' + encodeURIComponent(askBody);
 
   const gallery = (p.fotos && p.fotos.length) ? p.fotos : [p.foto];
+  const makerSpec = p.specs.find(([k]) => /designer|maker/i.test(k));
 
   pdp.innerHTML = `
     <div class="pdp-gallery">
       <div class="pdp-media"><img id="pdp-main-img" src="${gallery[0]}" alt="${p.naam}"></div>
+      <p class="pdp-fig">Fig. 1 &mdash; ${p.categorie}</p>
       ${gallery.length > 1 ? `
       <div class="pdp-thumbs">
         ${gallery.map((src, i) => `<button type="button" class="pdp-thumb${i === 0 ? ' active' : ''}" data-src="${src}" aria-label="Photo ${i + 1}"><img src="${src}" alt=""></button>`).join('')}
@@ -38,7 +40,8 @@
       <span class="badge ${p.laag}">${TIER[p.laag]}</span>${p.sold ? ' <span class="badge sold">Sold</span>' : ''}
       <p class="eyebrow">${p.categorie}</p>
       <h1 class="pname">${p.naam}</h1>
-      <dl>${p.specs.map(([k,v]) => `<div class="spec"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+      ${makerSpec ? `<p class="pdp-byline">${makerSpec[1]}</p>` : ''}
+      <dl class="pdp-specsheet">${p.specs.filter(spec => spec !== makerSpec).map(([k,v]) => `<div class="spec"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
       <p class="story">${p.verhaal}</p>
       <div class="price">${p.prijs} <small>${p.prijsNoot || ''}</small></div>
 

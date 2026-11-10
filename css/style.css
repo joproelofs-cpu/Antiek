@@ -331,21 +331,35 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
   color:var(--bone);text-decoration:none;padding:13px 16px;border-radius:8px;transition:.14s}
 .dd-item:hover{background:var(--taupe);color:var(--ink)}
 
-/* ---- product page (PDP) ---- */
-.pdp{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:22px 0 48px;align-items:start}
-.pdp-gallery{display:flex;flex-direction:column;align-items:center;gap:14px}
+/* ---- product page (PDP): vintage design-catalogue layout ----
+   Reference: 1970s Cassina spread — bold grotesque headline, a small
+   coloured designer byline, a plain studio-box photo, and a hairline
+   technical spec sheet. ---- */
+.pdp{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin:28px 0 48px;align-items:start;
+  border-top:2px solid var(--bone);padding-top:26px}
+.pdp-gallery{display:flex;flex-direction:column;align-items:center;gap:10px}
 .pdp-media{position:relative;aspect-ratio:9/16;width:auto;max-width:100%;height:min(78vh,740px);
-  background:var(--studio);overflow:hidden;border:1px solid var(--line);border-radius:var(--blob-4)}
+  background:var(--studio);overflow:hidden;border:1px solid var(--bone);border-radius:2px}
 .pdp-media img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.pdp-thumbs{display:flex;gap:10px}
-.pdp-thumb{width:64px;height:64px;flex:none;padding:0;border:2px solid transparent;border-radius:12px;
-  overflow:hidden;cursor:pointer;background:var(--studio);transition:border-color .18s}
+.pdp-fig{align-self:flex-start;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--bone-dim);margin:2px 0 0}
+.pdp-thumbs{display:flex;gap:8px;align-self:flex-start}
+.pdp-thumb{width:56px;height:56px;flex:none;padding:0;border:1px solid var(--bone);border-radius:2px;
+  overflow:hidden;cursor:pointer;background:var(--studio);transition:border-color .18s,outline-color .18s;outline:2px solid transparent;outline-offset:1px}
 .pdp-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.pdp-thumb:hover{border-color:var(--taupe-d)}
-.pdp-thumb.active{border-color:var(--taupe)}
-.pdp-info{padding-top:4px}
-.pdp-info .pname{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.05;margin:6px 0 16px}
-.pdp-info .price{font-size:28px;margin:10px 0 4px}
+.pdp-thumb:hover{outline-color:var(--taupe-d)}
+.pdp-thumb.active{outline-color:var(--taupe)}
+.pdp-info{padding-top:0;border-left:2px solid var(--bone);padding-left:44px}
+.pdp-info .pname{font-family:'Archivo',sans-serif;font-weight:900;letter-spacing:-.02em;
+  font-size:clamp(32px,4.6vw,52px);line-height:.98;margin:10px 0 2px;text-transform:uppercase;color:var(--bone)}
+.pdp-byline{font-family:'Archivo',sans-serif;font-weight:600;font-size:16px;color:var(--taupe);margin:0 0 20px}
+.pdp-specsheet{border-top:2px solid var(--bone);margin-top:4px}
+.pdp-specsheet .spec{border-top:none;border-bottom:1px solid var(--line);padding:11px 0;font-size:13.5px}
+.pdp-specsheet .spec dt{letter-spacing:.12em}
+.pdp-specsheet .spec dd{font-family:'Spline Sans Mono',monospace;font-weight:600}
+.pdp-info .price{font-family:'Spline Sans Mono',monospace;font-weight:700;font-size:28px;margin:10px 0 4px;
+  border-top:2px solid var(--bone);padding-top:14px;color:var(--bone)}
+@media(max-width:760px){.pdp-info{border-left:none;padding-left:0;border-top:2px solid var(--bone);padding-top:22px}}
 .ship-calc{border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:22px 0}
 .ship-label{display:block;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:10px}
 .ship-select{width:100%;font-family:'Archivo',sans-serif;font-size:15px;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:var(--ox-deep);color:var(--bone);cursor:pointer}
