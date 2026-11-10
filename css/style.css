@@ -333,9 +333,16 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 
 /* ---- product page (PDP) ---- */
 .pdp{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin:22px 0 48px;align-items:start}
+.pdp-gallery{display:flex;flex-direction:column;gap:14px}
 .pdp-media{position:relative;aspect-ratio:9/16;background:var(--studio);overflow:hidden;border:1px solid var(--line);
   border-radius:var(--blob-4)}
 .pdp-media img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.pdp-thumbs{display:flex;gap:10px}
+.pdp-thumb{width:64px;height:64px;flex:none;padding:0;border:2px solid transparent;border-radius:12px;
+  overflow:hidden;cursor:pointer;background:var(--studio);transition:border-color .18s}
+.pdp-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.pdp-thumb:hover{border-color:var(--taupe-d)}
+.pdp-thumb.active{border-color:var(--taupe)}
 .pdp-info{padding-top:4px}
 .pdp-info .pname{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(28px,4vw,40px);line-height:1.05;margin:6px 0 16px}
 .pdp-info .price{font-size:28px;margin:10px 0 4px}

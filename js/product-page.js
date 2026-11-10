@@ -29,8 +29,16 @@
   const askHref = 'mailto:' + CONTACT.email + '?subject=' + encodeURIComponent('Enquiry: ' + p.naam) +
                   '&body=' + encodeURIComponent(askBody);
 
+  const gallery = (p.fotos && p.fotos.length) ? p.fotos : [p.foto];
+
   pdp.innerHTML = `
-    <div class="pdp-media"><img src="${p.foto}" alt="${p.naam}"></div>
+    <div class="pdp-gallery">
+      <div class="pdp-media"><img id="pdp-main-img" src="${gallery[0]}" alt="${p.naam}"></div>
+      ${gallery.length > 1 ? `
+      <div class="pdp-thumbs">
+        ${gallery.map((src, i) => `<button type="button" class="pdp-thumb${i === 0 ? ' active' : ''}" data-src="${src}" aria-label="Photo ${i + 1}"><img src="${src}" alt=""></button>`).join('')}
+      </div>` : ''}
+    </div>
     <div class="pdp-info">
       <span class="badge ${p.laag}">${TIER[p.laag]}</span>${p.sold ? ' <span class="badge sold">Sold</span>' : ''}
       <p class="eyebrow">${p.categorie}</p>
@@ -65,6 +73,16 @@
       </div>
       <p class="note">Shipping shown is an estimate. For large pieces we can also arrange a tailored quote or local pickup in Koningsbosch. Prices are indicative.</p>`}
     </div>`;
+
+  if (gallery.length > 1){
+    const mainImg = document.getElementById('pdp-main-img');
+    pdp.querySelectorAll('.pdp-thumb').forEach(btn => {
+      btn.addEventListener('click', () => {
+        mainImg.src = btn.dataset.src;
+        pdp.querySelectorAll('.pdp-thumb').forEach(b => b.classList.toggle('active', b === btn));
+      });
+    });
+  }
 
   if (!p.sold && !p.whoppah){
     const fmt = n => '\u20ac' + Number(n).toLocaleString('nl-NL');
