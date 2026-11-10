@@ -62,7 +62,6 @@ function renderGrid(list){
       <div class="card-img">
         <img src="${p.foto}" alt="${p.naam}" loading="lazy">
         ${p.sold ? '<span class="sold-tint"></span><span class="sold-stamp">Sold</span>' : ''}
-        ${p.whoppah ? '<span class="whoppah-badge">Via Whoppah</span>' : ''}
       </div>
       <div class="card-b">
         <span class="card-cat">${p.categorie}</span>
