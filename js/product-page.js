@@ -29,8 +29,6 @@
   const periodSpec = p.specs.find(([k]) => /period/i.test(k));
   const tagline = makerSpec ? makerSpec[1] : p.categorie;
 
-  const extras = gallery.slice(1, 4);
-
   pdp.innerHTML = `
     <div class="pdp-titlebar">
       <div class="pdp-titlerow">
@@ -40,13 +38,7 @@
       <p class="pdp-subtitle">${p.categorie}${periodSpec ? ' &middot; ' + periodSpec[1] : ''}</p>
     </div>
 
-    <div class="pdp-collage${extras.length ? '' : ' solo'}">
-      <div class="pdp-collage-main"><img id="pdp-main-img" src="${gallery[0]}" alt="${p.naam}"></div>
-      ${extras.length ? `
-      <div class="pdp-collage-side">
-        ${extras.map((src, i) => `<button type="button" class="pdp-collage-thumb" data-i="${i + 1}" aria-label="Photo ${i + 2}"><img src="${src}" alt=""></button>`).join('')}
-      </div>` : ''}
-    </div>
+    <div class="pdp-hero"><img id="pdp-main-img" src="${gallery[0]}" alt="${p.naam}"></div>
 
     <div class="pdp-feature">
       <h2 class="pdp-tagline">${tagline}</h2>
@@ -55,6 +47,11 @@
         <dl class="pdp-specsheet">${p.specs.filter(spec => spec !== makerSpec && spec !== periodSpec).map(([k,v]) => `<div class="spec"><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
       </div>
     </div>
+
+    ${gallery.length > 1 ? `
+    <div class="pdp-thumbs">
+      ${gallery.map((src, i) => `<button type="button" class="pdp-thumb${i === 0 ? ' active' : ''}" data-i="${i}" aria-label="Photo ${i + 1}"><img src="${src}" alt=""></button>`).join('')}
+    </div>` : ''}
 
     ${!p.sold && !p.whoppah ? `
     <div class="ship-calc">
@@ -80,10 +77,13 @@
       : p.whoppah ? 'Listed and sold via Whoppah, not through our own checkout. &ldquo;Buy on Whoppah&rdquo; takes you to the listing to purchase and arrange delivery there.'
       : 'Shipping shown is an estimate. For large pieces we can also arrange a tailored quote or local pickup in Koningsbosch. Prices are indicative.'}</p>`;
 
-  if (extras.length){
+  if (gallery.length > 1){
     const mainImg = document.getElementById('pdp-main-img');
-    pdp.querySelectorAll('.pdp-collage-thumb').forEach(btn => {
-      btn.addEventListener('click', () => { mainImg.src = gallery[+btn.dataset.i]; });
+    pdp.querySelectorAll('.pdp-thumb').forEach(btn => {
+      btn.addEventListener('click', () => {
+        mainImg.src = gallery[+btn.dataset.i];
+        pdp.querySelectorAll('.pdp-thumb').forEach(b => b.classList.toggle('active', b === btn));
+      });
     });
   }
 

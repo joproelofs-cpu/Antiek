@@ -48,7 +48,7 @@ a{color:inherit}
 /* logo: compact en gecentreerd, strak boven de foto */
 .logo-banner{display:block;height:clamp(75px,10.5vw,120px);width:auto;max-width:100%;margin:8px auto 30px}
 
-.lead{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,4.4vw,44px);line-height:1.04;letter-spacing:-.01em;max-width:20ch;margin:8px 0 6px}
+.lead{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(26px,4.4vw,44px);line-height:1.04;letter-spacing:-.01em;max-width:20ch;margin:8px 0 6px}
 .lead em{font-style:italic;color:var(--taupe)}
 .sub{font-size:15px;color:var(--bone-dim);max-width:54ch;margin-bottom:18px}
 .sub.full{max-width:none}
@@ -275,7 +275,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .spot-media{background:var(--studio);min-height:340px}
 .spot-media img{width:100%;height:100%;object-fit:cover;display:block}
 .spot-text{padding:40px 42px;display:flex;flex-direction:column;justify-content:center;gap:6px}
-.spot-title{font-family:'Fraunces',serif;font-weight:700;font-size:32px;line-height:1.05;margin:2px 0 8px}
+.spot-title{font-family:'Playfair Display',serif;font-weight:900;font-size:32px;line-height:1.05;margin:2px 0 8px}
 .spot-story{font-size:15px;line-height:1.65;color:var(--bone-dim);margin:0 0 12px}
 .spot-price{font-family:'Spline Sans Mono',monospace;font-weight:600;font-size:24px;color:var(--brass-lite);margin-bottom:16px}
 .spot-price small{font-family:'Archivo',sans-serif;font-weight:400;font-size:12px;color:var(--bone-dim)}
@@ -348,24 +348,19 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .pdp-subtitle{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--bone-dim);
   margin:10px 0 0}
 
-.pdp-collage{display:flex;gap:12px;height:min(66vh,580px);margin-bottom:6px}
-.pdp-collage.solo{height:min(58vh,520px)}
-.pdp-collage-main{flex:0 0 63%;position:relative;overflow:hidden;background:var(--studio);
-  border:1px solid var(--line);border-radius:var(--blob-1)}
-.pdp-collage.solo .pdp-collage-main{flex:1 1 100%}
-.pdp-collage-main img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.pdp-collage-side{flex:1;display:flex;flex-direction:column;gap:12px;min-width:0}
-.pdp-collage-thumb{flex:1;min-height:0;padding:0;border:1px solid var(--line);cursor:pointer;
-  overflow:hidden;background:var(--studio);transition:opacity .16s}
-.pdp-collage-thumb:hover{opacity:.82}
-.pdp-collage-thumb:nth-child(1){border-radius:var(--blob-2)}
-.pdp-collage-thumb:nth-child(2){border-radius:var(--blob-3)}
-.pdp-collage-thumb:nth-child(3){border-radius:var(--blob-4)}
-.pdp-collage-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-@media(max-width:700px){.pdp-collage{flex-direction:column;height:auto}
-  .pdp-collage-main{flex:none;aspect-ratio:1/1}.pdp-collage-side{flex-direction:row;height:120px}}
+.pdp-hero{aspect-ratio:1/1;max-height:min(66vh,580px);margin:0 auto 6px;overflow:hidden;
+  background:var(--studio);border:1px solid var(--line);border-radius:4px}
+.pdp-hero img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 
-.pdp-feature{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;margin:34px 0;padding-bottom:34px}
+.pdp-thumbs{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px;
+  border-top:1px solid var(--bone);margin-top:30px;padding-top:30px}
+.pdp-thumb{aspect-ratio:1/1;padding:0;border:none;border-radius:4px;overflow:hidden;cursor:pointer;
+  background:var(--studio);opacity:.5;transition:opacity .16s}
+.pdp-thumb img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.pdp-thumb:hover{opacity:.8}
+.pdp-thumb.active{opacity:1}
+
+.pdp-feature{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;margin:34px 0}
 .pdp-tagline{font-family:'Fraunces',serif;font-style:italic;font-weight:700;font-size:clamp(26px,3.6vw,38px);
   line-height:1.08;margin:0;color:var(--bone)}
 .pdp-feature-right{padding-left:36px}
