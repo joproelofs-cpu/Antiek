@@ -21,5 +21,4 @@ body::after{opacity:.02}                                   /* minder korrel op l
 .hs-room .door{background:rgba(255,247,236,.9);color:#3A2A1E}
 .scrim{background:rgba(58,32,14,.4)}
 /* logo op licht: donkere variant */
-.nav-logo-dark{display:none}
-.nav-logo-light{display:block}
+.logo-banner{content:none}

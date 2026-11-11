@@ -33,7 +33,7 @@ a{color:inherit}
 /* slanke bovenbalk met alleen de tabs */
 .topnav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:2px;flex-wrap:wrap;row-gap:6px}
 .nav-logo{height:38px;width:auto;display:block}
-.nav-logo-light{display:none}
+.logo-banner{display:block;height:clamp(75px,10.5vw,120px);width:auto;max-width:100%;margin:8px auto 30px}
 .nav-left,.nav-right{display:flex;gap:4px}
 .tab{font-family:'Spline Sans Mono',monospace;font-size:14px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
   border:none;background:transparent;color:var(--bone-dim);padding:14px 20px;border-radius:999px;cursor:pointer;transition:.18s}
@@ -213,7 +213,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .foot-link:hover{color:var(--bone);text-decoration:underline}
 
 /* ---- showroom switcher: text link above the stage photo ---- */
-.room-switch{display:flex;justify-content:flex-end;max-width:900px;margin:20px auto 12px}
+.room-switch{display:flex;justify-content:flex-end;max-width:900px;margin:0 auto 12px}
 .switch-btn{font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
   text-decoration:underline;text-underline-offset:3px;display:inline-flex;align-items:center;gap:6px;transition:.18s}
 .switch-btn::after{content:"\2192"}
@@ -246,6 +246,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 
 /* ---- sfeerbeelden: strook van foto's, links naar rechts ---- */
 .ambience{margin:26px 0 6px}
+.ambience-rule{margin-top:20px}
 .ambience-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-radius:14px;overflow:hidden}
 .ambience-grid img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:0;display:block}
 @media(max-width:640px){
@@ -348,7 +349,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .pdp-subtitle{font-family:'Fraunces',serif;font-style:italic;font-size:17px;color:var(--bone-dim);
   margin:10px 0 0}
 
-.pdp-hero{position:relative;aspect-ratio:3/2;max-height:min(66vh,580px);margin:0 auto 6px;overflow:hidden;
+.pdp-hero{position:relative;aspect-ratio:3/2;max-height:min(74vh,660px);margin:0 auto 6px;overflow:hidden;
   background:var(--studio);border:1px solid var(--line);border-radius:4px}
 .pdp-hero img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .pdp-arrow{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;
