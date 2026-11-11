@@ -381,7 +381,7 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 .ship-lines > div{display:flex;justify-content:space-between;gap:16px}
 .ship-total{padding-top:11px;margin-top:2px;font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--bone)}
 
-.pdp-bottombar{display:flex;align-items:center;gap:16px;border-top:1px solid var(--bone);padding-top:24px}
+.pdp-bottombar{display:flex;align-items:center;gap:16px;margin-top:-14px}
 .pdp-price-bottom{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:30px;color:var(--bone);flex:none}
 .pdp-price-bottom small{font-family:'Archivo',sans-serif;font-style:normal;font-size:12px;color:var(--bone-dim);display:block}
 .pdp-buy{flex:1;text-align:center;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:600;
