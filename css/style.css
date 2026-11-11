@@ -124,30 +124,26 @@ a{color:inherit}
   box-shadow:-24px 0 60px -20px rgba(0,0,0,.7);transform:translateX(105%);transition:transform .32s cubic-bezier(.4,0,.1,1);z-index:50;display:flex;flex-direction:column}
 .panel.open{transform:translateX(0)}
 @media(prefers-reduced-motion:reduce){.panel{transition:none}.card,.card-img img{transition:none}}
-.panel-media{position:relative;aspect-ratio:9/16;overflow:hidden;flex:none;border-radius:var(--blob-2)}
+.panel-media{position:relative;aspect-ratio:9/16;overflow:hidden;flex:none;border-radius:4px;border:1px solid var(--line)}
 .panel-media img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .panel .close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(13,6,4,.7);color:var(--bone);font-size:18px;cursor:pointer;z-index:2}
 .panel-body{padding:24px 26px 26px;overflow:auto}
-.badge{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:inline-block;padding:5px 10px;border-radius:999px;border:1px solid var(--line);margin-bottom:14px;color:var(--bone)}
-.badge.A{background:var(--moss);color:var(--ink);border-color:var(--moss)}
-.badge.B{background:transparent;color:var(--taupe);border-color:var(--taupe)}
-.badge.C{background:var(--taupe);color:var(--ink);border-color:var(--taupe)}
-.badge.sold{background:var(--ink);color:var(--bone-dim);border-color:var(--line);margin-left:6px}
-.eyebrow{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--taupe);margin:0 0 4px}
-.pname{font-family:'Fraunces',serif;font-weight:700;font-size:28px;line-height:1.06;margin:0 0 16px}
 .spec{border-top:1px solid var(--line);padding:9px 0;display:flex;justify-content:space-between;gap:14px;font-size:13.5px}
 .spec dt{font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--bone-dim)}
 .spec dd{margin:0;text-align:right;font-weight:500;color:var(--bone)}
+.panel .eyebrow{font-family:'Fraunces',serif;font-style:italic;font-size:14px;letter-spacing:0;text-transform:none;color:var(--bone-dim);margin:0 0 4px}
+.panel .pname{font-family:'Playfair Display',serif;font-weight:900;font-size:27px;line-height:1.05;margin:0 0 16px}
 .story{font-size:14px;line-height:1.65;margin:16px 0 18px;color:var(--bone-dim)}
-.price{font-family:'Spline Sans Mono',monospace;font-weight:600;font-size:25px;margin:2px 0;color:var(--bone)}
-.price small{font-family:'Archivo',sans-serif;font-weight:400;font-size:12px;color:var(--bone-dim);letter-spacing:0}
+.price{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:26px;margin:2px 0;color:var(--bone)}
+.price small{font-family:'Archivo',sans-serif;font-style:normal;font-weight:400;font-size:12px;color:var(--bone-dim);letter-spacing:0}
 .cta{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.cta a,.cta button{flex:1;min-width:130px;text-align:center;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:600;font-size:14px;padding:13px 16px;border-radius:9px;cursor:pointer;border:1px solid var(--taupe);transition:.16s}
-.cta .primary{background:var(--taupe);color:var(--ink)}
-.cta .primary:hover{background:var(--taupe-d);border-color:var(--taupe-d)}
+.cta a,.cta button{flex:1;min-width:130px;text-align:center;text-decoration:none;font-family:'Archivo',sans-serif;font-weight:600;
+  letter-spacing:.04em;text-transform:uppercase;font-size:13px;padding:13px 16px;border-radius:9px;cursor:pointer;border:1px solid var(--bone);transition:.16s}
+.cta .primary{background:var(--bone);color:var(--ox-deep)}
+.cta .primary:hover{background:var(--taupe);color:var(--ink);border-color:var(--taupe)}
 .cta .ghost{background:transparent;color:var(--bone);border-color:var(--line)}
 .cta .ghost:hover{border-color:var(--taupe);color:var(--taupe)}
-.note{font-size:12px;color:var(--bone-dim);margin-top:14px;font-family:'Spline Sans Mono',monospace;letter-spacing:.02em}
+.note{font-family:'Fraunces',serif;font-style:italic;font-size:12.5px;color:var(--bone-dim);margin-top:14px;letter-spacing:0}
 
 footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-size:12px;color:var(--bone-dim);font-family:'Spline Sans Mono',monospace;letter-spacing:.04em}
 

@@ -2,7 +2,6 @@
    het productpaneel en het overzicht 'Alle producten'.
    Inhoud staat in products.js, dit bestand hoef je niet te bewerken. */
 
-const TIER_LABEL = { A:"Entry piece", B:"Mid-range", C:"Signature piece" };
 const COLLECTION = (window.CR_COLLECTION === 'midcentury') ? 'midcentury' : 'antique';
 const PRODUCTS = CATALOG.filter(p => p.collection === COLLECTION);
 const ALL_PRODUCTS = CATALOG;
@@ -82,8 +81,6 @@ function openPanel(id){
   const p = byId(id); if(!p) return;
   document.getElementById('pimg').src = p.foto;
   document.getElementById('pimg').alt = p.naam;
-  const badge = document.getElementById('badge');
-  badge.className = 'badge ' + p.laag; badge.textContent = TIER_LABEL[p.laag];
   document.getElementById('eyebrow').textContent = p.categorie;
   document.getElementById('pname').textContent = p.naam;
   document.getElementById('specs').innerHTML =
