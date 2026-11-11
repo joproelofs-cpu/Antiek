@@ -32,7 +32,8 @@ a{color:inherit}
 
 /* slanke bovenbalk met alleen de tabs */
 .topnav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:2px;flex-wrap:wrap;row-gap:6px}
-.nav-logo{height:30px;width:auto;display:block}
+.nav-logo{height:38px;width:auto;display:block}
+.nav-logo-light{display:none}
 .nav-left,.nav-right{display:flex;gap:4px}
 .tab{font-family:'Spline Sans Mono',monospace;font-size:14px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
   border:none;background:transparent;color:var(--bone-dim);padding:14px 20px;border-radius:999px;cursor:pointer;transition:.18s}
