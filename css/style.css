@@ -364,24 +364,22 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:18px;font-si
 @media(max-width:700px){.pdp-collage{flex-direction:column;height:auto}
   .pdp-collage-main{flex:none;aspect-ratio:1/1}.pdp-collage-side{flex-direction:row;height:120px}}
 
-.pdp-feature{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;
-  border-bottom:1px solid var(--line);margin:34px 0;padding-bottom:34px}
+.pdp-feature{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start;margin:34px 0;padding-bottom:34px}
 .pdp-tagline{font-family:'Fraunces',serif;font-style:italic;font-weight:700;font-size:clamp(26px,3.6vw,38px);
   line-height:1.08;margin:0;color:var(--bone)}
-.pdp-feature-right{border-left:1px solid var(--line);padding-left:36px}
+.pdp-feature-right{padding-left:36px}
 .pdp-feature-right .story{font-size:15px;line-height:1.65;color:var(--bone-dim);margin:0 0 20px}
-.pdp-specsheet{border-top:1px solid var(--line)}
-.pdp-specsheet .spec{border-top:none;border-bottom:1px solid var(--line);padding:11px 0;font-size:14px}
+.pdp-specsheet .spec{border-top:none;padding:11px 0;font-size:14px}
 .pdp-specsheet .spec dt{font-family:'Fraunces',serif;font-style:italic;font-weight:400;color:var(--bone-dim);letter-spacing:0;text-transform:none}
 .pdp-specsheet .spec dd{font-family:'Fraunces',serif;font-weight:500}
-@media(max-width:700px){.pdp-feature{grid-template-columns:1fr}.pdp-feature-right{border-left:none;padding-left:0}}
+@media(max-width:700px){.pdp-feature{grid-template-columns:1fr}.pdp-feature-right{padding-left:0}}
 
 .ship-calc{border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0 0 28px}
 .ship-label{display:block;font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--bone-dim);margin-bottom:10px}
 .ship-select{width:100%;font-family:'Fraunces',serif;font-size:15px;padding:12px 14px;border-radius:9px;border:1px solid var(--line);background:var(--ox-deep);color:var(--bone);cursor:pointer}
 .ship-lines{margin-top:16px;display:flex;flex-direction:column;gap:9px;font-family:'Fraunces',serif;font-size:14px;color:var(--bone-dim)}
 .ship-lines > div{display:flex;justify-content:space-between;gap:16px}
-.ship-total{border-top:1px solid var(--line);padding-top:11px;margin-top:2px;font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--bone)}
+.ship-total{padding-top:11px;margin-top:2px;font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--bone)}
 
 .pdp-bottombar{display:flex;align-items:center;gap:16px;border-top:1px solid var(--bone);padding-top:24px}
 .pdp-price-bottom{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;font-size:30px;color:var(--bone);flex:none}
