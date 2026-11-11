@@ -38,7 +38,12 @@
       <p class="pdp-subtitle">${p.categorie}${periodSpec ? ' &middot; ' + periodSpec[1] : ''}</p>
     </div>
 
-    <div class="pdp-hero"><img id="pdp-main-img" src="${gallery[0]}" alt="${p.naam}"></div>
+    <div class="pdp-hero">
+      <img id="pdp-main-img" src="${gallery[0]}" alt="${p.naam}">
+      ${gallery.length > 1 ? `
+      <button type="button" class="pdp-arrow prev" aria-label="Previous photo">&#8249;</button>
+      <button type="button" class="pdp-arrow next" aria-label="Next photo">&#8250;</button>` : ''}
+    </div>
 
     <div class="pdp-feature">
       <h2 class="pdp-tagline">${tagline}</h2>
@@ -79,12 +84,15 @@
 
   if (gallery.length > 1){
     const mainImg = document.getElementById('pdp-main-img');
-    pdp.querySelectorAll('.pdp-thumb').forEach(btn => {
-      btn.addEventListener('click', () => {
-        mainImg.src = gallery[+btn.dataset.i];
-        pdp.querySelectorAll('.pdp-thumb').forEach(b => b.classList.toggle('active', b === btn));
-      });
-    });
+    let current = 0;
+    function show(i){
+      current = (i + gallery.length) % gallery.length;
+      mainImg.src = gallery[current];
+      pdp.querySelectorAll('.pdp-thumb').forEach(b => b.classList.toggle('active', +b.dataset.i === current));
+    }
+    pdp.querySelectorAll('.pdp-thumb').forEach(btn => btn.addEventListener('click', () => show(+btn.dataset.i)));
+    pdp.querySelector('.pdp-arrow.prev')?.addEventListener('click', () => show(current - 1));
+    pdp.querySelector('.pdp-arrow.next')?.addEventListener('click', () => show(current + 1));
   }
 
   if (!p.sold && !p.whoppah){
